@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('companion_card')->nullable();
             $table->enum('level', ['sma/smk', 'kuliah']);
             $table->enum('status', ['pending', 'accepted', 'rejected']);
+            $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

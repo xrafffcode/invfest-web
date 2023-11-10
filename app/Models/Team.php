@@ -71,4 +71,44 @@ class Team extends Model
     {
         return $this->hasMany(TeamMember::class);
     }
+
+    /**
+     * Get the works for the team.
+     */
+    public function works()
+    {
+        return $this->hasOne(Work::class);
+    }
+
+    /**
+     * Get leader card attribute.
+     */
+    public function getLeaderCardAttribute($value)
+    {
+        return asset('storage/' . $value);
+    }
+
+    /**
+     * Set leader card attribute.
+     */
+    public function setLeaderCardAttribute($value)
+    {
+        $this->attributes['leader_card'] = $value->store('assets/teams', $this->team_name . '/card', 'public');
+    }
+
+    /**
+     * Get companion card attribute.
+     */
+    public function getCompanionCardAttribute($value)
+    {
+        return asset('storage/' . $value);
+    }
+
+    /**
+     * Set companion card attribute.
+     */
+    public function setCompanionCardAttribute($value)
+    {
+        $this->attributes['companion_card'] = $value->store('assets/teams', $this->team_name . '/card', 'public');
+    }
 }
