@@ -18,15 +18,37 @@
         <!-- Navbar Menu  -->
         <div class="d-none d-lg-block" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-
-                <a class="btn btn-primary btn-rounded me-3" href="{{ route('login') }}">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login
-                </a>
-                <a class="btn btn-primary btn-rounded" href="{{ route('register') }}">
-                    <i class="fas fa-user-plus"></i>
-                    Register
-                </a>
+                @guest
+                    <a class="btn btn-primary btn-rounded me-3" href="{{ route('login') }}">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </a>
+                    <a class="btn btn-primary btn-rounded" href="{{ route('register') }}">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>
