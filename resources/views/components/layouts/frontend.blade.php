@@ -57,10 +57,24 @@
 
     {{ $slot }}
 
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{ asset('frontend/js/app.js') }}?v={{ uniqid() }}"></script>
     <script src="{{ asset('frontend/js/script.js') }}?v={{ uniqid() }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.back-to-top').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+    </script>
 
     @stack('plugin-scripts')
 

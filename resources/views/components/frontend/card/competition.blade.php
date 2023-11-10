@@ -4,7 +4,7 @@
         <div class="position-absolute top-0 end-0 p-3">
             <span class="badge bg-secondary badge-competition">
                 @if ($competition->level == 'sma/smk')
-                    SMA
+                    SMA/SMK
                 @elseif ($competition->level == 'mahasiswa')
                     Mahasiswa
                 @endif

@@ -3,7 +3,7 @@
 
         <a class="navbar-brand mx-auto mx-lg-0
             d-flex flex-row justify-content-center align-self-center"
-            data-scroll href="/">
+            href="{{ route('frontend.landing') }}">
             <img src="{{ asset(getWebConfiguration()->nav_logo) }}" alt="Logo" width="60px" height="80px" />
             <div class="d-flex flex-column align-self-center justify-self-center mx-3">
                 <span class="text-blue font-weight-bold">
@@ -23,7 +23,7 @@
                     <i class="fas fa-sign-in-alt"></i>
                     Login
                 </a>
-                <a class="btn btn-primary btn-rounded" href="">
+                <a class="btn btn-primary btn-rounded" href="{{ route('register') }}">
                     <i class="fas fa-user-plus"></i>
                     Register
                 </a>
