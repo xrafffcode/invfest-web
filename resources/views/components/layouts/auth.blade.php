@@ -20,9 +20,15 @@
 
     @stack('plugin-styles')
 
+    <style>
+        :root {
+            --primary: {{ getWebConfiguration()->primary_color }};
+        }
+    </style>
+
     <!-- common css -->
-    <link href="{{ asset('admin/css/app.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
+    <link href="{{ asset('admin/css/app.css') }}?v={{ uniqid() }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}?v={{ uniqid() }}">
     <!-- end common css -->
 
     @stack('style')
