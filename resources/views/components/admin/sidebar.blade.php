@@ -18,7 +18,13 @@
                         <span class="link-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->is('') ? ' active' : '' }}">
+                <li class="nav-item {{ request()->is('admin/competition*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.competition.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="award"></i>
+                        <span class="link-title">Manajemen Kompetisi</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/website-configuration') ? ' active' : '' }}">
                     <a href="{{ route('admin.website-configuration.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="settings"></i>
                         <span class="link-title">Konfigurasi Web</span>

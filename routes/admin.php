@@ -6,3 +6,5 @@ Route::get('/dashboard', [\App\Http\Controllers\Web\Admin\DashboardController::c
 
 Route::get('/website-configuration', [\App\Http\Controllers\Web\Admin\WebConfigurationController::class, 'index'])->name('website-configuration.index');
 Route::put('/website-configuration/{id}', [\App\Http\Controllers\Web\Admin\WebConfigurationController::class, 'update'])->name('website-configuration.update');
+
+Route::resource('competition', \App\Http\Controllers\Web\Admin\CompetitionController::class);

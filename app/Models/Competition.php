@@ -17,6 +17,8 @@ class Competition extends Model
      */
     protected $fillable = [
         'name',
+        'slug',
+        'level',
         'description',
         'poster',
         'guidebook',
@@ -69,5 +71,13 @@ class Competition extends Model
     public function setGuidebookAttribute($value)
     {
         $this->attributes['guidebook'] = $value->storeAs('assets/competitions', 'guidebook_' . $this->name . '.pdf', 'public');
+    }
+
+    /**
+     * Set the competition's slug.
+     */
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = strtolower(str_replace(' ', '-', $value));
     }
 }
