@@ -14,7 +14,7 @@ Web Invfest untuk registrasi perlombaan
 
 2. Navigate to the project directory:
    ```bash
-   cd web-invest
+   cd invfest-web
    ```
 
 3. Install dependencies
