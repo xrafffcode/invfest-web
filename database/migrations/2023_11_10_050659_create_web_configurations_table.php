@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('web_configurations', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('favicon');
+            $table->string('favicon')->default('assets/web-configurations/placeholder.png');
             $table->string('title');
             $table->string('heading');
             $table->string('description');
-            $table->string('nav_logo');
-            $table->string('footer_logo');
+            $table->string('nav_logo')->default('assets/web-configurations/placeholder.png');
+            $table->string('footer_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_description');
             $table->string('footer_copyrigth');
             $table->date('deadline');
@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('primary_color');
             $table->string('secondary_color');
-            $table->string('twibbon');
+            $table->string('twibbon')->default('assets/web-configurations/placeholder.png');
             $table->string('twibbon_link');
-            $table->string('mascot');
+            $table->string('mascot')->default('assets/web-configurations/placeholder.png');
             $table->timestamps();
         });
     }
