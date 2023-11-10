@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #EDFBFB;
+}
+
+.navbar.sticky-top {
+    background-color: #ffffffb7 !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.5s;
+}
+
+.navbar.navbar.sticky-top .nav-item a {
+    color: #062d32 !important;
+
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+/* misc */
+#kompetisi h4 {
+    letter-spacing: 2px;
+}
+
+.primary-color {
+    background-color: #25aae1 !important;
+    color: white;
+}
+
+.secondary-color {
+    background-color: #062d32 !important;
+    color: white;
+}
+
+.text-slogan {
+    color: #25aae1;
+    font-size: 10px;
+}
+
+.text-secondary {
+    color: #7ea310 !important;
+}
+
+.text-darkgreen {
+    color: #062d32;
+}
+
+header h4 {
+    font-size: 40px;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+#details,
+#timelines,
+#contact {
+    scroll-margin-top: 5em;
+}
+
+#bottomNav .nav-item {
+    height: 50px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.top-shadow {
+    box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.075),
+        0px 0.125rem 0.25rem #888;
+}
+
+/* tables */
+.item-rounded {
+    border: 2px red solid;
+    border-radius: 20px !important;
+}
+
+/* button */
+.btn-rounded {
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+
+.btn.primary-color:hover {
+    color: white;
+    background-color: #062d32 !important;
+    border: 1px solid #53d96a;
+    transition: 0.3s;
+}
+
+.btn.secondary-color:hover {
+    opacity: 90%;
+    transition: 0.6s;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid #53d96a;
+    background-color: #062d32;
+    opacity: 70%;
+}
+
+.btn.btn-outline:hover {
+    transition: 0.4s;
+    background-color: #53d96a;
+    color: white;
+}
+
+.btn.btn-outline:focus {
+    background-color: #53d96a;
+    opacity: 100%;
+}
+
+.border-green {
+    border: 2px solid #2faf7e !important;
+}
+
+
+.nav-item {
+    font-size: 18px;
+    font-weight: 600 !important;
+}
+
+.nav-item:focus {
+    color: #062d32 !important;
+}
+
+.nav-item a {
+    margin-right: 10px;
+    color: #6c757d !important;
+}
+
+.navbar .nav-item .active {
+    color: #fff !important;
+}
+
+.navbar-brand img {
+    padding: 10px 0;
+}
+
+.nav-link:hover {
+    color: #062d32 !important;
+}
+
+.nav-link:visited {
+    color: #222;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #fff
+}
+
+.text-blue {
+    color: #25aae1 !important;
+}
+
+
+
+.active a {
+    color: #062d32 !important;
+}
+
+.active .fas,
+.active p {
+    color: #062d32 !important;
+}
+
+
+
+/* footer */
+.footer {
+    padding: 60px 0px 60px;
+}
+
+.footer h5 {
+    font-size: 22px;
+}
+
+.footer .footer_menu .footer_menu_list li a {
+    color: rgba(0, 0, 0, 0.6) !important;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.footer .footer_menu .footer_menu_list li a:hover {
+    color: #2faf7e !important;
+}
+
+.footer .fot_social .social-icon {
+    border-radius: 50%;
+    transition: all 0.5s;
+    width: 44px;
+    height: 44px;
+    display: block;
+    font-size: 22px;
+    line-height: 45px;
+    text-align: center;
+    color: #ffffff !important;
+    background-color: #2faf7e;
+}
+
+.footer_main_divider {
+    height: 1px;
+    width: 68%;
+    margin: 0 auto;
+    background-color: #e7e7e7;
+}
+
+@media (max-width: 767.98px) {
+    #navbarTop {
+        position: unset;
+    }
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.card-hero {
+    background-color: var(--primary);
+    border: 5px solid var(--secondary);
+    border-radius: 20px;
+}
+
+.mascot-image {
+    width: 400px;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.card-competition {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card-competition .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.badge-competition {
+    border-radius: 0.2rem;
+    padding: 10px 15px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.twibbon-image {
+    width: 400px;
+}

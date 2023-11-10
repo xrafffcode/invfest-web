@@ -10,7 +10,7 @@
                 <li class="breadcrumb-item active"><a href="#">Manajemen Kompetisi</a></li>
             </ol>
         </nav>
-        <a href="{{ route('admin.competition.create') }}" class="btn btn-primary btn-sm ml-auto mb-3">Tambah Prestasi</a>
+        <a href="{{ route('admin.competition.create') }}" class="btn btn-primary btn-sm ml-auto mb-3">Tambah Kompetisi</a>
     </div>
 
     <div class="row">

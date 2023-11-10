@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="title" content="{{ $title }}">
     <meta name="description" content="{{ $description ?? '' }}">
-    <meta name="keywords"
-        content="smpn2, paguyangan, smp terbaik, smpn, smp negri, ppdb smpn2, smp negeri 2 paguyangan, negri, smp">
+    <meta name="keywords" content="lomba, lomba ui/ux, lomba ngoding">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <title>{{ $title }}</title>
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://smpn2.xrafff.my.id/">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description ?? '' }}">
@@ -22,25 +21,29 @@
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="smpn2.xrafff.my.id">
-    <meta property="twitter:url" content="https://smpn2.xrafff.my.id/">
+    <meta property="twitter:domain" content="{{ url()->current() }}">
+    <meta property="twitter:url" content="{{ url()->current() }}">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description ?? '' }}">
     <meta name="twitter:image" content="https://foto.data.kemdikbud.go.id/getImage/20338383/3.jpg">
 
 
-    <link rel="shortcut icon" href="{{ asset(getWebConfiguration()->logo) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset(getWebConfiguration()->nav_logo) }}" type="image/x-icon">
 
     <style>
         :root {
-            --primary: {{ getWebConfiguration()->theme_color }};
+            --primary: {{ getWebConfiguration()->primary_color }};
+            --secondary: {{ getWebConfiguration()->secondary_color }};
         }
     </style>
     <link rel="stylesheet" href="{{ asset('frontend/css/app.css') }}?v={{ uniqid() }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/timeline.css') }}?v={{ uniqid() }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}?v={{ uniqid() }}">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
 
     @stack('plugin-styles')
 
