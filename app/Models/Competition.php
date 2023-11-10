@@ -38,4 +38,36 @@ class Competition extends Model
     {
         return $this->hasMany(Team::class);
     }
+
+    /**
+     * Get poster attribute.
+     */
+    public function getPosterAttribute($value)
+    {
+        return asset('storage/' . $value);
+    }
+
+    /**
+     * Set poster attribute.
+     */
+    public function setPosterAttribute($value)
+    {
+        $this->attributes['poster'] = $value->store('assets/competitions', 'public');
+    }
+
+    /**
+     * Get guidebook attribute.
+     */
+    public function getGuidebookAttribute($value)
+    {
+        return asset('storage/' . $value);
+    }
+
+    /**
+     * Set guidebook attribute.
+     */
+    public function setGuidebookAttribute($value)
+    {
+        $this->attributes['guidebook'] = $value->storeAs('assets/competitions', 'guidebook_' . $this->name . '.pdf', 'public');
+    }
 }
