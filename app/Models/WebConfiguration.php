@@ -92,14 +92,6 @@ class WebConfiguration extends Model
     }
 
     /**
-     * Get deadline attribute.
-     */
-    public function getDeadlineAttribute($value)
-    {
-        return date('d F Y', strtotime($value));
-    }
-
-    /**
      * Set deadline attribute.
      */
     public function setDeadlineAttribute($value)

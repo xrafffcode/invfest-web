@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
 
-        <img src="{{ asset(getWebConfiguration()->logo) }}" class="sidebar-brand" width="40">
+        <img src="{{ asset(getWebConfiguration()->nav_logo) }}" class="sidebar-brand" width="40">
         <div class="sidebar-toggler not-active">
             <span></span>
             <span></span>
@@ -18,90 +18,13 @@
                         <span class="link-title">Dashboard</span>
                     </a>
                 </li>
-
-                <li class="nav-item {{ request()->is('admin/guestbooks*') ? ' active' : '' }}">
-                    <a href="{{ route('admin.guestbooks.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="book"></i>
-                        <span class="link-title">Buku Tamu</span>
+                <li class="nav-item {{ request()->is('') ? ' active' : '' }}">
+                    <a href="{{ route('admin.website-configuration.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="settings"></i>
+                        <span class="link-title">Konfigurasi Web</span>
                     </a>
-                </li>
-                <li class="nav-item {{ request()->is('admin/graduations*') ? ' active' : '' }}">
-                    <a href="{{ route('admin.graduations.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="award"></i>
-                        <span class="link-title">Pengumuman Kelulusan</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ request()->is('admin/galleries*') ? ' active' : '' }}">
-                    <a href="{{ route('admin.galleries.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="image"></i>
-                        <span class="link-title">Gallery</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ request()->is('admin/achievements*') ? ' active' : '' }}">
-                    <a href="{{ route('admin.achievements.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="award"></i>
-                        <span class="link-title">Prestasi</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ request()->is('admin/teachers*') ? ' active' : '' }}">
-                    <a href="{{ route('admin.teachers.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="users"></i>
-                        <span class="link-title">Data Guru</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ request()->is('admin/banners*', 'admin/web-configuration') ? ' active' : '' }}">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#website-management" role="button"
-                        aria-expanded="{{ request()->is('admin/banners*', 'admin/web-configuration') ? ' true' : '' }}"
-                        aria-controls="website-management">
-                        <i class="link-icon" data-feather="book-open"></i>
-                        <span class="link-title">Manajemen Berita</span>
-                        <i class="link-arrow" data-feather="chevron-down"></i>
-                    </a>
-                    <div class="collapse {{ request()->is('admin/banners*', 'admin/web-configuration') ? 'show' : '' }}"
-                        id="website-management">
-                        <ul class="nav sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('admin.banners.index') }}"
-                                    class="nav-link {{ request()->is('admin/banners*') ? ' active' : '' }}">Banner</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.web-configuration') }}"
-                                    class="nav-link {{ request()->is('admin/web-configuration') ? ' active' : '' }}">Konfigurasi
-                                    Web</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item {{ request()->is('admin/banners*', 'admin/web-configuration') ? ' active' : '' }}">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#website-management" role="button"
-                        aria-expanded="{{ request()->is('admin/banners*', 'admin/web-configuration') ? ' true' : '' }}"
-                        aria-controls="website-management">
-                        <i class="link-icon" data-feather="globe"></i>
-                        <span class="link-title">Manajemen Website</span>
-                        <i class="link-arrow" data-feather="chevron-down"></i>
-                    </a>
-                    <div class="collapse {{ request()->is('admin/banners*', 'admin/web-configuration') ? 'show' : '' }}"
-                        id="website-management">
-                        <ul class="nav sub-menu">
-                            <li class="nav-item">
-                                <a href="{{ route('admin.banners.index') }}"
-                                    class="nav-link {{ request()->is('admin/banners*') ? ' active' : '' }}">Banner</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.web-configuration') }}"
-                                    class="nav-link {{ request()->is('admin/web-configuration') ? ' active' : '' }}">Konfigurasi
-                                    Web</a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
             @else
-                <li class="nav-item {{ request()->is('petugas/guestbooks*') ? ' active' : '' }}">
-                    <a href="{{ route('petugas.guestbooks.index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="book"></i>
-                        <span class="link-title">Buku Tamu</span>
-                    </a>
-                </li>
             @endhasrole
         </ul>
     </div>
