@@ -1,4 +1,23 @@
 <x-layouts.admin title="Konfigurasi Web">
+    @push('style')
+        <style>
+            #color-picker-primary {
+                width: 100%;
+                height: 200px;
+                border-radius: 5px;
+                background: {{ getWebConfiguration()->primary_color }};
+            }
+
+            #color-picker-secondary {
+                width: 100%;
+                height: 200px;
+                border-radius: 5px;
+                background: {{ getWebConfiguration()->secondary_color }};
+            }
+        </style>
+    @endpush
+
+
     <div class="d-flex align-items-center justify-content-between">
         <nav class="page-breadcrumb mb-0">
             <ol class="breadcrumb">
@@ -55,10 +74,12 @@
                             <x-input.file name="mascot" label="Mascot Event"
                                 value="{{ $webConfiguration->mascot }}" />
                             <h5 class="mb-3">Konfigurasi Tema</h5>
+                            <div id="color-picker-primary" class="mb-3"></div>
                             <x-input.text name="primary_color" label="Warna Utama"
-                                value="{{ $webConfiguration->primary_color }}" />
+                                value="{{ $webConfiguration->primary_color }}" id="primary_color" />
+                            <div id="color-picker-secondary" class="mb-3"></div>
                             <x-input.text name="secondary_color" label="Warna Sekunder"
-                                value="{{ $webConfiguration->secondary_color }}" />
+                                value="{{ $webConfiguration->secondary_color }}" id="secondary_color" />
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
@@ -68,4 +89,16 @@
             </x-admin.card>
         </div>
     </div>
+
+    @push('custom-scripts')
+        <script>
+            $('#primary_color').on('keyup', function() {
+                $('#color-picker-primary').css('background', $(this).val());
+            });
+
+            $('#secondary_color').on('keyup', function() {
+                $('#color-picker-secondary').css('background', $(this).val());
+            });
+        </script>
+    @endpush
 </x-layouts.admin>
