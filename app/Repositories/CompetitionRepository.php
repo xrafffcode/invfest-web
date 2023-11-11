@@ -29,15 +29,11 @@ class CompetitionRepository implements CompetitionRepositoryInterface
 
     public function updateCompetition($data, $id)
     {
-        $competition = Competition::find($id);
-
-        return $competition->update($data);
+        return Competition::find($id)->update($data);
     }
 
     public function deleteCompetition($id)
     {
-        $competition = Competition::find($id);
-
-        return $competition->delete();
+        return Competition::find($id)->delete();
     }
 }

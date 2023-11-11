@@ -41,7 +41,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.dashboard');
                 break;
             case false:
-                return redirect()->route('user.dashboard');
+                return redirect()->route('frontend.landing');
                 break;
         }
     }

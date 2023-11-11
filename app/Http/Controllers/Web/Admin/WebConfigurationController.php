@@ -9,8 +9,15 @@ use RealRashid\SweetAlert\Facades\Alert as Swal;
 
 class WebConfigurationController extends Controller
 {
+    /**
+     * @var WebConfigurationRepositoryInterface
+     */
     private WebConfigurationRepositoryInterface $webconfigurationRepository;
 
+
+    /**
+     * WebConfigurationController constructor.
+     */
     public function __construct(WebConfigurationRepositoryInterface $webconfigurationRepository)
     {
         $this->webconfigurationRepository = $webconfigurationRepository;

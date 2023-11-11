@@ -9,7 +9,7 @@
 
             </ol>
         </nav>
-        <a href="{{ route('admin.competition.store') }}" class="btn btn-danger btn-sm ml-auto mb-3">Kembali</a>
+        <a href="{{ route('admin.competition.index') }}" class="btn btn-danger btn-sm ml-auto mb-3">Kembali</a>
     </div>
 
     <div class="row">

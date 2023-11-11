@@ -1,7 +1,7 @@
 <div class="mb-3">
     <label class="form-label" for="{{ $attributes->get('name') }}">{{ $attributes->get('label') }}</label>
     <select
-        {{ $attributes->merge(['class' => 'form-control' . ($errors->has($attributes->get('name')) ? ' is-invalid' : '')]) }}
+        {{ $attributes->merge(['class' => 'form-select' . ($errors->has($attributes->get('name')) ? ' is-invalid' : '')]) }}
         id="{{ $attributes->get('name') }}" name="{{ $attributes->get('name') }}">
         {{ $slot }}
     </select>

@@ -121,7 +121,7 @@ a:hover {
 }
 
 .img-table-lightbox {
-    width: 100% !important;
+    width: 100px !important;
     height: 100px !important;
     object-fit: cover;
     border-radius: 0px !important;

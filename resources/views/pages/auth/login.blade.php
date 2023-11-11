@@ -24,6 +24,11 @@
                                         Masuk
                                     </x-button.primary>
 
+                                    <a href="{{ route('register') }}">
+                                        <x-button.primary-outline class="w-100" type="button">
+                                            Daftar Team
+                                        </x-button.primary-outline>
+                                    </a>
                                 </form>
                             </div>
                         </div>

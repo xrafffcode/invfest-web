@@ -24,6 +24,12 @@
                         <span class="link-title">Manajemen Kompetisi</span>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/payment-method*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.payment-method.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="credit-card"></i>
+                        <span class="link-title">Metode Pembayaran</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/website-configuration') ? ' active' : '' }}">
                     <a href="{{ route('admin.website-configuration.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="settings"></i>

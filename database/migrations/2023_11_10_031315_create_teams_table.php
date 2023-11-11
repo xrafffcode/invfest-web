@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('institution');
             $table->string('leader_name');
             $table->string('leader_phone');
-            $table->string('leader_email');
             $table->string('leader_card');
             $table->string('companion_name')->nullable();
             $table->string('companion_card')->nullable();

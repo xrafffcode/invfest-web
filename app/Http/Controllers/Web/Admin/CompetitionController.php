@@ -12,8 +12,14 @@ use RealRashid\SweetAlert\Facades\Alert as Swal;
 class CompetitionController extends Controller
 {
 
+    /**
+     * @var CompetitionRepositoryInterface
+     */
     private CompetitionRepositoryInterface $competitionRepository;
 
+    /**
+     * CompetitionController constructor.
+     */
     public function __construct(CompetitionRepositoryInterface $competitionRepository)
     {
         $this->competitionRepository = $competitionRepository;
