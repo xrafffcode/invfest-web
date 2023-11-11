@@ -46,7 +46,7 @@ class Payment extends Model
      */
     public function setProofAttribute($value)
     {
-        $this->attributes['proof'] = $value->storeAs('assets/payments', $this->team->team_name . '/proof', 'public');
+        $this->attributes['proof'] = $value->storeAs('assets/payments', $this->team->team_name . '.' . $value->extension(), 'public');
     }
 
     /**

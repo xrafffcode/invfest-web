@@ -8,6 +8,7 @@ use App\Interfaces\CompetitionRepositoryInterface;
 use App\Interfaces\PaymentMethodRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RegisterTeamRepositoryInterface;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert as Swal;
@@ -65,9 +66,7 @@ class RegisterController extends Controller
     {
         $this->registerTeamRepository->registerTeam($request->all());
 
-        Swal::toast('Pendaftaran berhasil, silahkan melakukan pembayaran untuk menyelesaikan pendaftaran', 'success');
-
-        return redirect()->route('payment-team');
+        return redirect()->route('team-members');
     }
 
     /**
@@ -101,5 +100,36 @@ class RegisterController extends Controller
         Swal::toast('Pembayaran berhasil, silahkan menunggu konfirmasi dari admin', 'success');
 
         return redirect()->route('login');
+    }
+
+    public function teamMember()
+    {
+        return view('pages.auth.team-member');
+    }
+
+    public function teamMemberStore(Request $request)
+    {
+        $data = $request->all();
+
+        $data['team_id'] = Auth::user()->teams->first()->id;
+
+        for ($i = 1; $i < 3; $i++) {
+            $propertyName = "member_{$i}";
+            $propertyCard = "ktm_{$i}";
+
+            $data[$propertyName] = $request->input($propertyName);
+            $data[$propertyCard] = $request->file($propertyCard);
+
+            TeamMember::create([
+                'team_id' => $data['team_id'],
+                'name' => $data[$propertyName],
+                'card' => $data[$propertyCard],
+            ]);
+        }
+
+        Swal::toast('Pendaftaran berhasil, silahkan melakukan pembayaran untuk menyelesaikan pendaftaran', 'success');
+
+
+        return redirect()->route('payment-team');
     }
 }

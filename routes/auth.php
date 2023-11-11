@@ -9,5 +9,8 @@ Route::post('/logout', [\App\Http\Controllers\Web\Auth\LoginController::class, '
 Route::get('/register', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'index'])->name('register');
 Route::post('/register', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'register'])->name('register.store');
 
+Route::get('/team-members', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'teamMember'])->name('team-members');
+Route::post('/team-members', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'teamMemberStore'])->name('team-members.store');
+
 Route::get('/payment-team', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'payment'])->name('payment-team');
 Route::post('/payment-team', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'paymentStore'])->name('payment-team.store');

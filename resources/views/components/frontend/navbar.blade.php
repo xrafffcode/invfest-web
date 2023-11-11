@@ -34,7 +34,13 @@
                             <i class="fas fa-users"></i>
                             {{ Auth::user()->teams->first()->team_name }}
                         </a>
-                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu border-0 shadow-sm p-2" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('team.dashboard') }}">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

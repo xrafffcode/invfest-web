@@ -287,3 +287,23 @@ header h4 {
 .twibbon-image {
     width: 400px;
 }
+
+.dropdown-item {
+    border-radius: 10px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: var(--primary);
+    color: white !important;
+}
+
+.nav-side .nav-link.active {
+    background-color: var(--primary);
+    color: white !important;
+    border-radius: 10px;
+}
+
+.nav-side .nav-link.active .fas {
+    color: white !important;
+}
