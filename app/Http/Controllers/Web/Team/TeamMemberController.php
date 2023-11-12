@@ -10,7 +10,7 @@ class TeamMemberController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['checkTeamStatus']);
+        $this->middleware(['checkTeamStatus', 'verified']);
     }
 
 

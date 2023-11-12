@@ -10,12 +10,17 @@
                                     {{ Auth::user()->teams->first()->team_name }}
                                 </a>
                                 <h5 class="text-muted fw-normal mb-4">Silahkan lakukan pembayaran untuk melanjutkan
-                                    pendaftaran</h5>
+                                    pendaftaran sebesar
+                                    <b class="text-primary">
+                                        {{ Auth::user()->teams->first()->competition->registration_fee_rupiah }}
+                                    </b>
+                                </h5>
 
                                 @foreach ($paymentMethods as $paymentMethod)
-                                    <div class="card mb-5">
+                                    <div class="card mb-3">
                                         <div class="card-body d-flex gap-3 align-items-center ">
-                                            <img src="{{ $paymentMethod->logo }}" alt="" width="50">
+                                            <img src="{{ $paymentMethod->logo }}" alt="{{ $paymentMethod->name }}"
+                                                width="60" height="60" class="rounded-2">
                                             <div class="information ">
                                                 <h2 class="card-title mb-0">
                                                     {{ $paymentMethod->name }}

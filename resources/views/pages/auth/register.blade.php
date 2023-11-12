@@ -12,11 +12,11 @@
                                 <form action="{{ route('register.store') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <x-input.select name="competition_id" label="Kompetisi">
+                                    <x-input.select name="competition_id" label="Kompetisi" id="competition_id">
                                         <option value="">Pilih Kompetisi</option>
                                         @foreach ($competitions as $competition)
                                             <option value="{{ $competition->id }}">
-                                                {{ $competition->name }}
+                                                {{ $competition->name }} ({{ $competition->level }})
                                             </option>
                                         @endforeach
                                     </x-input.select>
@@ -33,7 +33,7 @@
                                     <x-input.text name="companion_name" label="Nama Pendamping" id="companion_name" />
                                     <x-input.file name="companion_card" label="Kartu Identitas Pendamping"
                                         id="companion_card" />
-                                    <x-input.text name="email" label="Email" type="email" />
+                                    <x-input.text name="email" label="Email Ketua" type="email" />
                                     <x-input.text name="password" label="Password" type="password" />
                                     <x-button.primary class="w-100 mb-3" type="submit">
                                         Daftar Tim

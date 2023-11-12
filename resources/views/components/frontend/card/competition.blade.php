@@ -13,6 +13,7 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ $competition->name }}</h5>
+        <p class="card-text">Biaya Pendaftaran: {{ $competition->registration_fee_rupiah }}</p>
     </div>
     <div class="card-footer">
         <a href="" class="btn btn-secondary btn-block">

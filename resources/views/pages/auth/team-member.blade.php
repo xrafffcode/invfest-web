@@ -22,7 +22,7 @@
                                         value="{{ old('member_2') }}" />
                                     <x-input.file label="Kartu Pelajar/KTM Anggota 2" name="ktm_2" />
                                     <x-button.primary class="w-100 mb-3" type="submit">
-                                        Lanjutka ke Pembayaran
+                                        Lanjutkan ke Pembayaran
                                     </x-button.primary>
                                 </form>
                             </div>

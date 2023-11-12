@@ -66,6 +66,48 @@ class RegisterController extends Controller
     {
         $this->registerTeamRepository->registerTeam($request->all());
 
+        $request->user()->sendEmailVerificationNotification();
+
+        Swal::success('Pendaftaran berhasil, silahkan cek email untuk melakukan verifikasi');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Show the verification page.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function verification()
+    {
+        return view('pages.auth.verification-email');
+    }
+
+    /**
+     * Handle an incoming verification request.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verificationStore(Request $request)
+    {
+        $request->user()->sendEmailVerificationNotification();
+
+        return redirect()->route('verification');
+    }
+
+    /**
+     * Handle an incoming verification request.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verificationVerify(Request $request)
+    {
+        $request->user()->markEmailAsVerified();
+
+        Swal::toast('Verifikasi email berhasil, silahkan isi data anggota tim', 'success');
+
         return redirect()->route('team-members');
     }
 
