@@ -32,26 +32,35 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-users"></i>
-                            {{ Auth::user()->teams->first()->team_name }}
+                            {{ Auth::user()->teams->first()->team_name ?? 'Admin' }}
                         </a>
                         <ul class="dropdown-menu border-0 shadow-sm p-2" aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('team.dashboard') }}">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                            @hasrole('admin')
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                            @else
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('team.dashboard') }}">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            @endhasrole
                         </ul>
                     </li>
                 @endguest
