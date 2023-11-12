@@ -81,7 +81,7 @@ class RegisterController extends Controller
         if (Auth::user()->teams->first()->payment != null) {
             Swal::toast('Pembayaran sudah dilakukan, silahkan menunggu konfirmasi dari admin', 'success');
 
-            return redirect()->route('frontend.landing');
+            return redirect()->route('team.dashboard');
         }
 
         return view('pages.auth.payment', compact('paymentMethods'));
