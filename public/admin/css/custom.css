@@ -16,8 +16,8 @@
 }
 
 .btn-primary:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--primaryHover) !important;
+    border-color: var(--primaryHover) !important;
 }
 
 .btn-primary:active {
@@ -109,10 +109,7 @@ a:hover {
     fill: rgba(239, 243, 255, 0.5);
 }
 
-.btn-primary:hover {
-    color: white !important;
-    background-color: #3b6994;
-}
+
 
 .table td img {
     width: 100%;

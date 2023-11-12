@@ -22,10 +22,10 @@ class WebConfiguration extends Seeder
             'deadline' => '2021-10-10',
             'email' => 'invfest@gmail.com',
             'phone' => '081234567890',
-            'primary_color' => '#000000',
-            'primary_color_hover' => '#000000',
-            'secondary_color' => '#000000',
-            'secondary_color_hover' => '#000000',
+            'primary_color' => '#0A3578',
+            'primary_color_hover' => '#154FAA',
+            'secondary_color' => '#007BFF',
+            'secondary_color_hover' => '#0168D7',
             'twibbon_link' => 'https://invfest.my.id',
         ]);
     }

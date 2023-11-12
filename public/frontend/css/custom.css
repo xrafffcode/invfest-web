@@ -238,6 +238,11 @@ header h4 {
     border-color: var(--primary);
 }
 
+.btn-primary:hover {
+    background-color: var(--primaryHover) !important;
+    border-color: var(--primaryHover) !important;
+}
+
 .card-hero {
     background-color: var(--primary);
     border: 5px solid var(--secondary);

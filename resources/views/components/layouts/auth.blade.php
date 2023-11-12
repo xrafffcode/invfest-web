@@ -24,6 +24,9 @@
     <style>
         :root {
             --primary: {{ getWebConfiguration()->primary_color }};
+            --primaryHover: {{ getWebConfiguration()->primary_color_hover }};
+            --secondary: {{ getWebConfiguration()->secondary_color }};
+            --secondaryHover: {{ getWebConfiguration()->secondary_color_hover }};
         }
     </style>
 
