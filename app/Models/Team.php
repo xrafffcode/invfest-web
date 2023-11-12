@@ -93,8 +93,7 @@ class Team extends Model
      */
     public function setLeaderCardAttribute($value)
     {
-        $this->attributes['leader_card'] =
-            $value->storeAs('assets/teams/', $this->team->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+        $this->attributes['leader_card'] = $value->storeAs('assets/teams/', $this->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
     }
 
     /**

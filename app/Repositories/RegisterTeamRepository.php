@@ -13,6 +13,9 @@ class RegisterTeamRepository implements RegisterTeamRepositoryInterface
     public function registerTeam($data)
     {
         $user = $this->createUser($data);
+
+        $user->assignRole('team');
+
         $team = $this->createTeam($data, $user);
 
         Auth::login($user);
