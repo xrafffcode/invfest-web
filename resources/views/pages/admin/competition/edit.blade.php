@@ -33,6 +33,8 @@
                     <a href="{{ asset($competition->guidebook) }}" class="btn btn-primary btn-sm mb-3"
                         target="_blank">Lihat Guide Book</a>
                     <x-input.file label="Guide Book" name="guidebook" id="guidebook" />
+                    <x-input.text label="Harga Pendaftaran" name="registration_fee" type="number"
+                        value="{{ $competition->registration_fee }}" />
                     <x-button.primary class="float-end" type="submit">
                         Update
                     </x-button.primary>

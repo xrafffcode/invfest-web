@@ -81,4 +81,12 @@ class Competition extends Model
     {
         $this->attributes['slug'] = strtolower(str_replace(' ', '-', $value));
     }
+
+    /**
+     * Get the registration fee rupiah format.
+     */
+    public function getRegistrationFeeRupiahAttribute()
+    {
+        return 'Rp ' . number_format($this->registration_fee, 0, ',', '.');
+    }
 }

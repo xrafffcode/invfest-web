@@ -31,6 +31,10 @@
                                 <td>{{ $competition->description }}</td>
                             </tr>
                             <tr>
+                                <th>Harga Pendaftaran</th>
+                                <td>{{ $competition->registration_fee_rupiah }}</td>
+                            </tr>
+                            <tr>
                                 <th>Guide Book</th>
                                 <td>
                                     <a href="{{ asset($competition->guidebook) }}" class="btn btn-primary btn-sm"

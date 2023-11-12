@@ -24,6 +24,7 @@
                             <th>Tingkat</th>
                             <th>Poster</th>
                             <th>Guide Book</th>
+                            <th>Biaya Pendaftaran</th>
                             <th>Aksi</th>
                         </tr>
                     </x-slot>
@@ -44,6 +45,7 @@
                                     <a href="{{ asset($competition->guidebook) }}" class="btn btn-primary btn-sm"
                                         target="_blank">Lihat</a>
                                 </td>
+                                <td>{{ $competition->registration_fee_rupiah }}</td>
                                 <td>
                                     <a href="{{ route('admin.competition.edit', $competition->id) }}"
                                         class="btn btn-warning btn-sm">Edit</a>

@@ -25,6 +25,7 @@
                     <x-input.textarea label="Deskripsi" name="description" />
                     <x-input.file label="Poster" name="poster" />
                     <x-input.file label="Guide Book" name="guidebook" />
+                    <x-input.text label="Harga Pendaftaran" name="registration_fee" type="number" />
 
                     <x-button.primary class="float-end" type="submit">
                         Simpan
