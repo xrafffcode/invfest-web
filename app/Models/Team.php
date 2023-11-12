@@ -111,7 +111,7 @@ class Team extends Model
     {
         if ($value) {
             $this->attributes['companion_card'] =
-                $value->storeAs('assets/teams/', $this->team->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+                $value->storeAs('assets/teams/', $this->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
         }
 
         $this->attributes['companion_card'] = null;
