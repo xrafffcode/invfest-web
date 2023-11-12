@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('poster');
             $table->string('guidebook');
+            $table->integer('registration_fee');
             $table->timestamps();
         });
     }

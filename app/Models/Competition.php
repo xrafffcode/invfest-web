@@ -22,6 +22,7 @@ class Competition extends Model
         'description',
         'poster',
         'guidebook',
+        'registration_fee',
     ];
 
     /**
