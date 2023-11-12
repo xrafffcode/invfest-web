@@ -99,7 +99,7 @@ class RegisterController extends Controller
 
         Swal::toast('Pembayaran berhasil, silahkan menunggu konfirmasi dari admin', 'success');
 
-        return redirect()->route('login');
+        return redirect()->route('team.dashboard');
     }
 
     public function teamMember()

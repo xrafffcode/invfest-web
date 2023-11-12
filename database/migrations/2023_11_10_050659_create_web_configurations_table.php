@@ -25,7 +25,9 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('primary_color');
+            $table->string('primary_color_hover');
             $table->string('secondary_color');
+            $table->string('secondary_color_hover');
             $table->string('twibbon')->default('assets/web-configurations/placeholder.png');
             $table->string('twibbon_link');
             $table->string('mascot')->default('assets/web-configurations/placeholder.png');
