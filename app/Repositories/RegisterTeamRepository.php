@@ -20,6 +20,8 @@ class RegisterTeamRepository implements RegisterTeamRepositoryInterface
 
         Auth::login($user);
 
+        $user->sendEmailVerificationNotification();
+
         return $team;
     }
 

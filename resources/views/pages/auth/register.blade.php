@@ -35,7 +35,7 @@
                                         id="companion_card" />
                                     <x-input.text name="email" label="Email Ketua" type="email" />
                                     <x-input.text name="password" label="Password" type="password" />
-                                    <x-button.primary class="w-100 mb-3" type="submit">
+                                    <x-button.primary class="w-100 mb-3" type="submit" id="btn-submit">
                                         Daftar Tim
                                     </x-button.primary>
                                 </form>
@@ -60,6 +60,12 @@
                     $('#companion_name').parent().hide();
                     $('#companion_card').parent().hide();
                 }
+            });
+
+            $('#btn-submit').click(function() {
+                $(this).html(
+                    `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+                );
             });
         </script>
     @endpush

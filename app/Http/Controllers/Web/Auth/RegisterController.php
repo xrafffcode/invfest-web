@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Auth\StorePaymentRequest;
+use App\Http\Requests\Web\Auth\StoreRegisterRequest;
 use App\Interfaces\CompetitionRepositoryInterface;
 use App\Interfaces\PaymentMethodRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
@@ -62,11 +63,10 @@ class RegisterController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function register(Request $request)
+    public function register(StoreRegisterRequest $request)
     {
         $this->registerTeamRepository->registerTeam($request->all());
 
-        $request->user()->sendEmailVerificationNotification();
 
         Swal::success('Pendaftaran berhasil, silahkan cek email untuk melakukan verifikasi');
 
