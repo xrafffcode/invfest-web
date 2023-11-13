@@ -67,7 +67,9 @@ class PaymentMethodController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $paymentMethod = $this->paymentMethodRepository->getPaymentMethodById($id);
+
+        return view('pages.admin.payment-methods.edit', compact('paymentMethod'));
     }
 
     /**
@@ -75,7 +77,11 @@ class PaymentMethodController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->paymentMethodRepository->updatePaymentMethod($request->all(), $id);
+
+        Swal::toast('Metode pembayaran berhasil diperbarui', 'success');
+
+        return redirect()->route('admin.payment-method.index');
     }
 
     /**
@@ -83,6 +89,10 @@ class PaymentMethodController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->paymentMethodRepository->deletePaymentMethod($id);
+
+        Swal::toast('Metode pembayaran berhasil dihapus', 'success');
+
+        return redirect()->route('admin.payment-method.index');
     }
 }
