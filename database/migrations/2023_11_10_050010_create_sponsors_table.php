@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('logo');
             $table->string('link');
+            $table->enum('level', ['bronze', 'silver', 'gold', 'platinum']);
             $table->timestamps();
         });
     }

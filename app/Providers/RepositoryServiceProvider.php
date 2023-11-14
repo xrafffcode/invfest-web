@@ -6,12 +6,14 @@ use App\Interfaces\CompetitionRepositoryInterface;
 use App\Interfaces\PaymentMethodRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RegisterTeamRepositoryInterface;
+use App\Interfaces\SponsorRepositoryInterface;
 use App\Interfaces\TeamRepositoryInterface;
 use App\Interfaces\WebConfigurationRepositoryInterface;
 use App\Repositories\CompetitionRepository;
 use App\Repositories\PaymentMethodRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\RegisterTeamRepository;
+use App\Repositories\SponsorRepository;
 use App\Repositories\TeamRepository;
 use App\Repositories\WebConfigurationRepository;
 use Illuminate\Support\ServiceProvider;
@@ -31,6 +33,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(RegisterTeamRepositoryInterface::class, RegisterTeamRepository::class);
         $this->app->bind(PaymentRepositoryInterface::class, PaymentRepository::class);
         $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
+        $this->app->bind(SponsorRepositoryInterface::class, SponsorRepository::class);
     }
 
     /**
