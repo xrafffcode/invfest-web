@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Frontend\CompetitionController;
 use App\Http\Controllers\Web\Frontend\LandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('frontend.landing');
+Route::get('/competition/{slug}', [CompetitionController::class, 'show'])->name('frontend.competition.show');

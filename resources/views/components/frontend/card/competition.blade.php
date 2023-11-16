@@ -16,7 +16,7 @@
         <p class="card-text">Biaya Pendaftaran: {{ $competition->registration_fee_rupiah }}</p>
     </div>
     <div class="card-footer">
-        <a href="" class="btn btn-secondary btn-block">
+        <a href="{{ route('frontend.competition.show', $competition->slug) }}" class="btn btn-secondary btn-block">
             Lihat Detail
         </a>
     </div>
