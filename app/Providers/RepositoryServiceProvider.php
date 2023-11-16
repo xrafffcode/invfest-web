@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\CompetitionRepositoryInterface;
+use App\Interfaces\MediaPartnerRepositoryInterface;
 use App\Interfaces\PaymentMethodRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RegisterTeamRepositoryInterface;
@@ -10,6 +11,7 @@ use App\Interfaces\SponsorRepositoryInterface;
 use App\Interfaces\TeamRepositoryInterface;
 use App\Interfaces\WebConfigurationRepositoryInterface;
 use App\Repositories\CompetitionRepository;
+use App\Repositories\MediaPartnerRepository;
 use App\Repositories\PaymentMethodRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\RegisterTeamRepository;
@@ -34,6 +36,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PaymentRepositoryInterface::class, PaymentRepository::class);
         $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
         $this->app->bind(SponsorRepositoryInterface::class, SponsorRepository::class);
+        $this->app->bind(MediaPartnerRepositoryInterface::class, MediaPartnerRepository::class);
     }
 
     /**

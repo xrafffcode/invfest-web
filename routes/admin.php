@@ -12,4 +12,5 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::resource('competition', \App\Http\Controllers\Web\Admin\CompetitionController::class);
     Route::resource('payment-method', \App\Http\Controllers\Web\Admin\PaymentMethodController::class);
     Route::resource('sponsor', \App\Http\Controllers\Web\Admin\SponsorController::class);
+    Route::resource('media-partner', \App\Http\Controllers\Web\Admin\MediaPartnerController::class);
 });

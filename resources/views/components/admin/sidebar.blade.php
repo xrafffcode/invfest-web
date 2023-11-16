@@ -30,6 +30,12 @@
                         <span class="link-title">Sponsor</span>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/media-partner*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.media-partner.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="share-2"></i>
+                        <span class="link-title">Media Partner</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/payment-method*') ? ' active' : '' }}">
                     <a href="{{ route('admin.payment-method.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="credit-card"></i>
