@@ -67,7 +67,6 @@ class RegisterController extends Controller
     {
         $this->registerTeamRepository->registerTeam($request->all());
 
-
         Swal::success('Pendaftaran berhasil, silahkan cek email untuk melakukan verifikasi');
 
         return redirect()->back();

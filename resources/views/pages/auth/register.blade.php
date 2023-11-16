@@ -12,18 +12,14 @@
                                 <form action="{{ route('register.store') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <x-input.select name="competition_id" label="Kompetisi" id="competition_id">
-                                        <option value="">Pilih Kompetisi</option>
-                                        @foreach ($competitions as $competition)
-                                            <option value="{{ $competition->id }}">
-                                                {{ $competition->name }} ({{ $competition->level }})
-                                            </option>
-                                        @endforeach
-                                    </x-input.select>
                                     <x-input.select name="level" label="Tingkat" id="level">
                                         <option value="">Pilih Tingkat</option>
                                         <option value="sma/smk">SMA/SMK</option>
-                                        <option value="kuliah">Mahasiswa</option>
+                                        <option value="mahasiswa">Mahasiswa</option>
+                                    </x-input.select>
+
+                                    <x-input.select name="competition_id" label="Kompetisi" id="competition_id">
+                                        <option value="">Pilih Kompetisi</option>
                                     </x-input.select>
                                     <x-input.text name="team_name" label="Nama Tim" />
                                     <x-input.text name="institution" label="Asal Institusi" />
@@ -35,6 +31,8 @@
                                         id="companion_card" />
                                     <x-input.text name="email" label="Email Ketua" type="email" />
                                     <x-input.text name="password" label="Password" type="password" />
+                                    <x-input.text name="password_confirmation" label="Konfirmasi Password"
+                                        type="password" />
                                     <x-button.primary class="w-100 mb-3" type="submit" id="btn-submit">
                                         Daftar Tim
                                     </x-button.primary>
@@ -66,6 +64,27 @@
                 $(this).html(
                     `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
                 );
+            });
+
+            $('#level').change(function() {
+                var level = $(this).val();
+
+                $.ajax({
+                    url: "api/get-competitions",
+                    data: {
+                        level: level
+                    },
+                    success: function(result) {
+                        console.log(result.data);
+                        $('#competition_id').empty();
+                        $('#competition_id').append('<option value="">Pilih Kompetisi</option>');
+                        $.each(result.data, function(key, value) {
+                            $('#competition_id').append('<option value="' + value.id + '">' + value
+                                .name + '</option>');
+                        });
+                    }
+
+                });
             });
         </script>
     @endpush

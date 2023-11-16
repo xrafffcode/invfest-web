@@ -22,6 +22,11 @@ class CompetitionRepository implements CompetitionRepositoryInterface
         return Competition::find($id);
     }
 
+    public function getCompetitionByLevel(string $level)
+    {
+        return Competition::where('level', $level)->get();
+    }
+
     public function createCompetition($data)
     {
         return Competition::create($data);
