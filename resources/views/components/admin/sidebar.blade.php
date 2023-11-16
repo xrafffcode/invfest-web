@@ -18,6 +18,12 @@
                         <span class="link-title">Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/team*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.team.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="users"></i>
+                        <span class="link-title">Tim Peserta</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/competition*') ? ' active' : '' }}">
                     <a href="{{ route('admin.competition.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="award"></i>
