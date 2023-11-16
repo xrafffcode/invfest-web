@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('favicon')->default('assets/web-configurations/placeholder.png');
             $table->string('title');
             $table->string('heading');
-            $table->string('description');
+            $table->longText('description');
             $table->string('nav_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_description');

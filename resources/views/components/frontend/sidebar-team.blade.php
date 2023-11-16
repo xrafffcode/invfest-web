@@ -11,10 +11,9 @@
                     Dashboard
                 </a>
                 @if (Auth::user()->teams->first()->status === 'accepted')
-                    <a class="nav-link mt-2 {{ request()->is('team/member') ? 'active' : '' }}"
-                        href="{{ route('team.member') }}">
-                        <i class="fas fa-users"></i>
-                        Member
+                    <a class="nav-link mt-2 {{ request()->is('team/work') ? 'active' : '' }}" href="">
+                        <i class="fas fa-tasks"></i>
+                        Pengumpulan Karya
                     </a>
                 @endif
             </li>

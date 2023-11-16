@@ -50,7 +50,6 @@
             <div class="page-content">
                 {{ $slot }}
             </div>
-
         </div>
     </div>
 

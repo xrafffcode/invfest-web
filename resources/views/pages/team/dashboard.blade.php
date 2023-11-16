@@ -1,4 +1,8 @@
 <x-layouts.dashboard-team title="Dashboard Tim {{ Auth::user()->teams->first()->team_name }}">
+    @push('plugin-styles')
+        <link rel="stylesheet" href="{{ asset('admin/assets/plugins/lightbox/css/lightbox.css') }}">
+    @endpush
+
     @if (Auth::user()->teams->first()->status == 'pending')
         <div class="alert alert-warning">
             <i class="fas fa-exclamation-triangle"></i>
@@ -8,23 +12,110 @@
                 Admin</a>
         </div>
     @else
-        <h5>Data Tim</h5>
-        <x-input.text label="Nama Tim" value="{{ Auth::user()->teams->first()->team_name }}" readonly />
-        <x-input.text label="Asal Instansi" value="{{ Auth::user()->teams->first()->institution }}" readonly />
-        <x-input.text label="Tingkat" value="{{ Auth::user()->teams->first()->level }}" readonly />
-        <x-input.text label="Kompetisi" value="{{ Auth::user()->teams->first()->competition->name }}" readonly />
-        <x-input.text label="Tanggal Daftar" value="{{ Auth::user()->teams->first()->created_at->format('d F Y') }}"
-            readonly />
-        <div class="mb-3 d-flex flex-column">
-            <label class="form-label">Bukti Pembayaran</label>
-            <img src="{{ asset(Auth::user()->teams->first()->payment->proof) }}" alt="Bukti Pembayaran"
-                class="img-fluid rounded" style="max-height: 300px; max-width: 300px;">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th>Nama Tim</th>
+                        <td>{{ Auth::user()->teams->first()->team_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Asal Instansi</th>
+                        <td>{{ Auth::user()->teams->first()->institution }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nama Ketua</th>
+                        <td>{{ Auth::user()->teams->first()->leader_name }}</td>
+                    </tr>
+                    <tr>
+                        <th> Kartu Pelajar / Mahasiswa Ketua</th>
+                        <td>
+                            <a href="{{ asset(Auth::user()->teams->first()->leader_card) }}" data-lightbox="image-1"
+                                data-title="Kartu Identitas {{ Auth::user()->teams->first()->leader_name }}">
+                                Kartu Pelajar / Mahasiswa
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email Ketua</th>
+                        <td>{{ Auth::user()->email }}</td>
+                    </tr>
+                    <tr>
+                        <th>No. HP Ketua</th>
+                        <td>{{ Auth::user()->teams->first()->leader_phone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Anggota</th>
+                        <td>
+                            <ul>
+                                @foreach (Auth::user()->teams->first()->members as $member)
+                                    <li>
+                                        {{ $member->name }} <a href="{{ asset($member->card) }}"
+                                            data-lightbox="image-1" data-title="Kartu Identitas {{ $member->name }}">
+                                            Kartu Pelajar / Mahasiswa
+
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </td>
+                    </tr>
+                    @if (Auth::user()->teams->first()->companion_name != null)
+                        <tr>
+                            <th>Nama Pembimbing</th>
+                            <td>{{ Auth::user()->teams->first()->companion_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Kartu Identitas Pembmbing</th>
+                            <td>
+                                <a href="{{ asset(Auth::user()->teams->first()->companion_card) }}"
+                                    data-title="Kartu Identitas {{ Auth::user()->teams->first()->companion_name }}">
+                                    Kartu Identitas Pembimbing </a>
+                            </td>
+                        </tr>
+                    @endif
+                    <tr>
+                        <th>Metode Pembayaran</th>
+                        <td>
+                            {{ Auth::user()->teams->first()->payment->paymentMethod->name }}
+                            {{ Auth::user()->teams->first()->payment->paymentMethod->number != null ? ' - ' . Auth::user()->teams->first()->payment->paymentMethod->number : '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Bukti Pembayaran</th>
+                        <td>
+                            <a href="{{ asset(Auth::user()->teams->first()->payment->proof) }}" data-lightbox="image-1"
+                                data-title="Bukti Pembayaran {{ Auth::user()->teams->first()->team_name }}">
+                                <img src="{{ asset(Auth::user()->teams->first()->payment->proof) }}"
+                                    class="img-table-lightbox" width="100">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            @if (Auth::user()->teams->first()->status == 'pending')
+                                <span class="badge bg-warning">Pending</span>
+                            @elseif(Auth::user()->teams->first()->status == 'accepted')
+                                <span class="badge bg-success">Diterima</span>
+                            @else
+                                <span class="badge bg-danger">Ditolak</span>
+                            @endif
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        @foreach (Auth::user()->teams->first()->members as $member)
-            <h6>Member {{ $loop->iteration }}</h6>
-            <x-input.text label="Nama" value="{{ $member->name }}" readonly />
-        @endforeach
     @endif
 
+    @push('plugin-scripts')
+        <script src="{{ asset('admin/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js') }}"></script>
 
+        <script>
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            })
+        </script>
+    @endpush
 </x-layouts.dashboard-team>

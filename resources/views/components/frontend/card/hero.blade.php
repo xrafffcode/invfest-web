@@ -9,9 +9,9 @@
                     {{ getWebConfiguration()->heading }}
                 </h2>
                 <div class="d-flex gap-3 mt-4">
-                    <a href="#guidebook" class="btn btn-outline-light btn-rounded">
-                        <i class="fas fa-book"></i>
-                        Guidebook
+                    <a href="#detail" class="btn btn-outline-light btn-rounded">
+                        <i class="fas fa-arrow-down"></i>
+                        Detail Lomba
                     </a>
                     <a href="{{ route('register') }}" class="btn btn-outline-light btn-rounded">
                         <i class="fas fa-user-plus"></i>

@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <x-frontend.card.hero />
     </div>
-    <div class="container py-5">
+    <div class="container py-5" id="competition">
         <h2 class="text-center text-primary">Kompetisi</h2>
         <div class="row justify-content-center">
             @foreach ($competitions as $competition)
