@@ -103,7 +103,7 @@
                                 <td>
                                     @if ($team->status == 'pending')
                                         <span class="badge bg-warning">Pending</span>
-                                    @elseif($team->status == 'approved')
+                                    @elseif($team->status == 'accepted')
                                         <span class="badge bg-success">Diterima</span>
                                     @else
                                         <span class="badge bg-danger">Ditolak</span>
@@ -114,24 +114,28 @@
                     </div>
                 </div>
                 <x-slot name="footer">
-                    <div class="d-flex justify-content-between">
-                        <form action="{{ route('admin.team.update', $team->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <input type="hidden" name="status" value="accepted">
-                            <input type="hidden" name="email" value="{{ $team->user->email }}">
-                            <button class="btn btn-success btn-sm"
-                                onclick="return confirm('Apakah anda yakin ingin menerima tim ini?')">Terima</button>
-                        </form>
-                        <form action="{{ route('admin.team.update', $team->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <input type="hidden" name="status" value="rejected">
-                            <input type="hidden" name="email" value="{{ $team->user->email }}">
-                            <button class="btn btn-danger btn-sm"
-                                onclick="return confirm('Apakah anda yakin ingin menolak tim ini?')">Tolak</button>
-                        </form>
-                    </div>
+                    @if ($team->status == 'pending')
+                        <div class="d-flex justify-content-between">
+                            <form action="{{ route('admin.team.update', $team->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="accepted">
+                                <input type="hidden" name="email" value="{{ $team->user->email }}">
+                                <button class="btn btn-success btn-sm"
+                                    onclick="return confirm('Apakah anda yakin ingin menerima tim ini?')">Terima</button>
+                            </form>
+                            <form action="{{ route('admin.team.update', $team->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="rejected">
+                                <input type="hidden" name="email" value="{{ $team->user->email }}">
+                                <button class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah anda yakin ingin menolak tim ini?')">Tolak</button>
+                            </form>
+                        </div>
+                    @else
+                        <a href="{{ route('admin.team.index') }}" class="btn btn-danger btn-sm">Kembali</a>
+                    @endif
                 </x-slot>
             </x-admin.card>
         </div>

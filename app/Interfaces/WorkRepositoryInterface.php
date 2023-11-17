@@ -4,5 +4,7 @@ namespace App\Interfaces;
 
 interface WorkRepositoryInterface
 {
-    public function getAll();
+    public function getAllWorks();
+    public function getWorkById($id);
+    public function createWork(array $data);
 }

@@ -19,7 +19,7 @@ class Work extends Model
         'team_id',
         'title',
         'url',
-        'status',
+        'is_reviewed',
     ];
 
     /**

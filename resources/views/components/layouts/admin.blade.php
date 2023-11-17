@@ -54,6 +54,7 @@
     </div>
 
     <!-- base js -->
+    <script src="{{ asset('frontend/js/script.js') }}"></script>
     <script src="{{ asset('admin/js/app.js') }}"></script>
     <script src="{{ asset('admin/assets/plugins/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('admin/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

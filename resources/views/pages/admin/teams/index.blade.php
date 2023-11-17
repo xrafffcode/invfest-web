@@ -48,7 +48,7 @@
                                 <td>
                                     @if ($team->status == 'pending')
                                         <span class="badge bg-warning">Pending</span>
-                                    @elseif($team->status == 'approved')
+                                    @elseif($team->status == 'accepted')
                                         <span class="badge bg-success">Diterima</span>
                                     @else
                                         <span class="badge bg-danger">Ditolak</span>
