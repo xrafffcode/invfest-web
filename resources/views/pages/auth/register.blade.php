@@ -21,15 +21,21 @@
                                     <x-input.select name="competition_id" label="Kompetisi" id="competition_id">
                                         <option value="">Pilih Kompetisi</option>
                                     </x-input.select>
-                                    <x-input.text name="team_name" label="Nama Tim" />
-                                    <x-input.text name="institution" label="Asal Institusi" />
-                                    <x-input.text name="leader_name" label="Nama Ketua" />
-                                    <x-input.text name="leader_phone" label="Nomor Telepon Ketua" />
-                                    <x-input.file name="leader_card" label="Kartu Identitas Ketua" />
-                                    <x-input.text name="companion_name" label="Nama Pendamping" id="companion_name" />
+                                    <x-input.text name="team_name" label="Nama Tim" value="{{ old('team_name') }}" />
+                                    <x-input.text name="institution" label="Asal Institusi"
+                                        value="{{ old('institution') }}" />
+                                    <x-input.text name="leader_name" label="Nama Ketua"
+                                        value="{{ old('leader_name') }}" />
+                                    <x-input.text name="leader_phone" label="Nomor Telepon Ketua"
+                                        value="{{ old('leader_phone') }}" />
+                                    <x-input.file name="leader_card" label="Kartu Identitas Ketua"
+                                        value="{{ old('leader_card') }}" />
+                                    <x-input.text name="companion_name" label="Nama Pendamping" id="companion_name"
+                                        value="{{ old('companion_name') }}" />
                                     <x-input.file name="companion_card" label="Kartu Identitas Pendamping"
                                         id="companion_card" />
-                                    <x-input.text name="email" label="Email Ketua" type="email" />
+                                    <x-input.text name="email" label="Email Ketua" type="email"
+                                        value="{{ old('email') }}" />
                                     <x-input.text name="password" label="Password" type="password" />
                                     <x-input.text name="password_confirmation" label="Konfirmasi Password"
                                         type="password" />

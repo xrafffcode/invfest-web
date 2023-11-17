@@ -1,4 +1,4 @@
-<x-layouts.admin title="Edit Prestasi">
+<x-layouts.admin title="Edit Kompetisi">
 
     <div class="d-flex align-items-center justify-content-between">
         <nav class="page-breadcrumb mb-0">
@@ -35,6 +35,8 @@
                     <x-input.file label="Guide Book" name="guidebook" id="guidebook" />
                     <x-input.text label="Harga Pendaftaran" name="registration_fee" type="number"
                         value="{{ $competition->registration_fee }}" />
+                    <x-input.text label="Link Grup Whatsapp" name="whatsapp_group_link"
+                        value="{{ $competition->whatsapp_group_link }}" />
                     <x-button.primary class="float-end" type="submit">
                         Update
                     </x-button.primary>

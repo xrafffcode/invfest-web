@@ -23,6 +23,7 @@ class Competition extends Model
         'poster',
         'guidebook',
         'registration_fee',
+        'whatsapp_group_link',
     ];
 
     /**

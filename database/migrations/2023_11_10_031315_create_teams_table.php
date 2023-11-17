@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('leader_card');
             $table->string('companion_name')->nullable();
             $table->string('companion_card')->nullable();
-            $table->enum('level', ['sma/smk', 'kuliah']);
+            $table->enum('level', ['sma/smk', 'mahasiswa']);
             $table->enum('status', ['pending', 'accepted', 'rejected']);
             $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('poster');
             $table->string('guidebook');
             $table->integer('registration_fee');
+            $table->string('whatsapp_group_link');
             $table->timestamps();
         });
     }

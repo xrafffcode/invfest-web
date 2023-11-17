@@ -1,4 +1,4 @@
-<x-layouts.admin title="Prestasi">
+<x-layouts.admin title="Kompetisi">
     @push('plugin-styles')
         <link rel="stylesheet" href="{{ asset('admin/assets/plugins/lightbox/css/lightbox.css') }}">
     @endpush
@@ -24,6 +24,7 @@
                             <th>Tingkat</th>
                             <th>Poster</th>
                             <th>Guide Book</th>
+                            <th>Link Grup Whatsapp</th>
                             <th>Biaya Pendaftaran</th>
                             <th>Aksi</th>
                         </tr>
@@ -43,6 +44,10 @@
                                 </td>
                                 <td>
                                     <a href="{{ asset($competition->guidebook) }}" class="btn btn-primary btn-sm"
+                                        target="_blank">Lihat</a>
+                                </td>
+                                <td>
+                                    <a href="{{ $competition->whatsapp_group_link }}" class="btn btn-primary btn-sm"
                                         target="_blank">Lihat</a>
                                 </td>
                                 <td>{{ $competition->registration_fee_rupiah }}</td>

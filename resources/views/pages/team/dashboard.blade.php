@@ -6,15 +6,33 @@
     @if (Auth::user()->teams->first()->status == 'pending')
         <div class="alert alert-warning">
             <i class="fas fa-exclamation-triangle"></i>
-            Tim anda sedang dalam proses verifikasi oleh admin. Silahkan menunggu. <a
-                href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
+            Tim anda sedang dalam proses verifikasi oleh admin. Silahkan menunggu.
+            <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
                 target="_blank" class="alert-link">Hubungi
                 Admin</a>
         </div>
     @else
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i>
+            Tim anda sudah diverifikasi oleh admin. Silahkan join grup whatsapp kami
+            <a href="{{ Auth::user()->teams->first()->competition->whatsapp_group_link }}" target="_blank"
+                class="alert-link">Link Grup
+                Whatsapp</a>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <table class="table">
+                    <tr>
+                        <th>Kompetisi</th>
+                        <td>{{ Auth::user()->teams->first()->competition->name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tingkat</th>
+                        <td>
+                            {{ Auth::user()->teams->first()->competition->level == 'sma/smk' ? 'SMA/SMK' : 'Mahasiswa' }}
+                        </td>
+                    </tr>
                     <tr>
                         <th>Nama Tim</th>
                         <td>{{ Auth::user()->teams->first()->team_name }}</td>

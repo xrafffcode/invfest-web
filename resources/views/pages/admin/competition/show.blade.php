@@ -44,6 +44,13 @@
                                         target="_blank">Lihat</a>
                                 </td>
                             </tr>
+                            <tr>
+                                <th>Link Grup Whatsapp</th>
+                                <td>
+                                    <a href="{{ $competition->whatsapp_group_link }}" class="btn btn-primary btn-sm"
+                                        target="_blank">Lihat</a>
+                                </td>
+                            </tr>
 
                         </table>
                     </div>

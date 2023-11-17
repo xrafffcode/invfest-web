@@ -19,6 +19,8 @@ class UpdateCompetitionRequest extends FormRequest
             'description' => 'required|string',
             'poster' => 'nullable|image|mimes:jpg,jpeg,png',
             'guidebook' => 'nullable|file|mimes:pdf',
+            'registration_fee' => 'required|numeric',
+            'whatsapp_group_link' => 'required|string',
         ];
     }
 
@@ -40,6 +42,8 @@ class UpdateCompetitionRequest extends FormRequest
             'poster.mimes' => 'Poster kompetisi harus berupa gambar dengan format jpg, jpeg, atau png.',
             'guidebook.file' => 'Guidebook kompetisi harus berupa file.',
             'guidebook.mimes' => 'Guidebook kompetisi harus berupa file dengan format pdf.',
+            'registration_fee.required' => 'Biaya pendaftaran kompetisi harus diisi.',
+            'registration_fee.numeric' => 'Biaya pendaftaran kompetisi harus berupa angka.',
         ];
     }
 }

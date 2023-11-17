@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <h5 class="mb-3">Konfigurasi Event</h5>
-                            <x-input.date name="deadline" label="Deadline Event"
+                            <x-input.datetime name="deadline" label="Deadline Event"
                                 value="{{ $webConfiguration->deadline }}" value="{{ $webConfiguration->deadline }}" />
                             <img src="{{ asset($webConfiguration->twibbon) }}" alt="{{ $webConfiguration->title }}"
                                 class="img-fluid mb-3" width="200" id="twibbon_image">
@@ -77,6 +77,9 @@
                             <div id="color-picker-primary" class="mb-3"></div>
                             <x-input.text name="primary_color" label="Warna Utama"
                                 value="{{ $webConfiguration->primary_color }}" id="primary_color" />
+                            <div id="color-picker-primary-hover" class="mb-3"></div>
+                            <x-input.text name="primary_color_hover" label="Warna Utama Hover"
+                                value="{{ $webConfiguration->primary_color_hover }}" id="primary_color_hover" />
                             <div id="color-picker-secondary" class="mb-3"></div>
                             <x-input.text name="secondary_color" label="Warna Sekunder"
                                 value="{{ $webConfiguration->secondary_color }}" id="secondary_color" />

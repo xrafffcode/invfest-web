@@ -21,6 +21,7 @@ class StoreCompetitionRequest extends FormRequest
             'poster' => 'required|image|mimes:jpg,jpeg,png',
             'guidebook' => 'required|file|mimes:pdf',
             'registration_fee' => 'required|numeric',
+            'whatsapp_group_link' => 'required|string',
         ];
     }
 
@@ -46,6 +47,8 @@ class StoreCompetitionRequest extends FormRequest
             'guidebook.mimes' => 'Guidebook kompetisi harus berupa file dengan format pdf.',
             'registration_fee.required' => 'Biaya pendaftaran kompetisi harus diisi.',
             'registration_fee.numeric' => 'Biaya pendaftaran kompetisi harus berupa angka.',
+            'whatsapp_group_link.required' => 'Link grup WhatsApp kompetisi harus diisi.',
+            'whatsapp_group_link.string' => 'Link grup WhatsApp kompetisi harus berupa string.',
         ];
     }
 

@@ -1,4 +1,4 @@
-<x-layouts.admin title="Tambah Prestasi">
+<x-layouts.admin title="Tambah Kompetisi">
 
 
     <div class="d-flex align-items-center justify-content-between">
@@ -23,10 +23,10 @@
                         <option value="mahasiswa">Mahasiswa</option>
                     </x-input.select>
                     <x-input.textarea label="Deskripsi" name="description" />
-                    <x-input.file label="Poster" name="poster" />
-                    <x-input.file label="Guide Book" name="guidebook" />
+                    <x-input.file label="Poster" name="poster" accept="image/*" />
+                    <x-input.file label="Guide Book" name="guidebook" accept="application/pdf" />
                     <x-input.text label="Harga Pendaftaran" name="registration_fee" type="number" />
-
+                    <x-input.text label="Link Grup Whatsapp" name="whatsapp_group_link" />
                     <x-button.primary class="float-end" type="submit">
                         Simpan
                     </x-button.primary>
