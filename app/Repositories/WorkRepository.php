@@ -21,4 +21,11 @@ class WorkRepository implements WorkRepositoryInterface
     {
         return Work::create($data);
     }
+
+    public function reviewedWork($id)
+    {
+        return Work::find($id)->update([
+            'is_reviewed' => true
+        ]);
+    }
 }
