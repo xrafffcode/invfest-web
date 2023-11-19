@@ -1,4 +1,4 @@
-<x-layouts.auth title="Pembayaran">
+<x-layouts.auth title="Pengisian Team">
     <div class="page-content d-flex align-items-center justify-content-center">
         <div class="row w-100 mx-0 auth-page">
             <div class="col-md-6 col-xl-5 mx-auto">
