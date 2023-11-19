@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Interfaces\RegisterTeamRepositoryInterface;
 use App\Models\User;
+use App\Notifications\OtpTeam;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,7 +21,15 @@ class RegisterTeamRepository implements RegisterTeamRepositoryInterface
 
         Auth::login($user);
 
-        $user->sendEmailVerificationNotification();
+        $otp = rand(100000, 999999);
+        $expiryTime = now()->addMinutes(5);
+
+        $user->otp = $otp;
+        $user->otp_expiry_time = $expiryTime;
+
+        $user->save();
+
+        $user->notify(new OtpTeam($otp));
 
         return $team;
     }

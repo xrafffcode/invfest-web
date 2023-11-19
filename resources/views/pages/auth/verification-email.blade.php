@@ -10,12 +10,12 @@
                                     Verifikasi Email
                                 </a>
                                 <h5 class="text-muted fw-normal mb-4">
-                                    Silahkan verifikasi email anda untuk melanjutkan pendaftaran
+                                    Silahkan masukan kode verifikasi yang telah dikirimkan ke email anda.
                                 </h5>
                                 <form action="{{ route('verification.send') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <x-input.text name="email" label="Email" type="email" />
+                                    <x-input.text name="otp" label="Kode Verifikasi" />
                                     <x-button.primary class="w-100 mb-3" type="submit">
                                         Verifikasi
                                     </x-button.primary>

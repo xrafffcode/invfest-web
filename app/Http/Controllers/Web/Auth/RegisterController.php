@@ -70,7 +70,7 @@ class RegisterController extends Controller
 
         Swal::success('Pendaftaran berhasil, silahkan cek email untuk melakukan verifikasi');
 
-        return redirect()->back();
+        return redirect()->route('verification');
     }
 
     /**
@@ -91,9 +91,26 @@ class RegisterController extends Controller
      */
     public function verificationStore(Request $request)
     {
-        $request->user()->sendEmailVerificationNotification();
+        // CHECK OTP
+        $user = Auth::user();
 
-        return redirect()->route('verification');
+        if ($user->otp != $request->otp) {
+            Swal::error('OTP yang anda masukkan salah');
+
+            return redirect()->back();
+        }
+
+        if ($user->otp_expiration < now()) {
+            Swal::error('OTP yang anda masukkan sudah kadaluarsa');
+
+            return redirect()->back();
+        }
+
+        $user->markEmailAsVerified();
+
+        Swal::toast('Verifikasi email berhasil, silahkan isi data anggota tim', 'success');
+
+        return redirect()->route('team-members');
     }
 
     /**

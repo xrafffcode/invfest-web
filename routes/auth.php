@@ -17,4 +17,4 @@ Route::post('/payment-team', [\App\Http\Controllers\Web\Auth\RegisterController:
 
 Route::get('/email/verify', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'verification'])->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'verificationVerify'])->name('verification.verify');
-Route::post('/email/verification-notification', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'verificationStore'])->name('verification.send');
+Route::post('/email/verification-check', [\App\Http\Controllers\Web\Auth\RegisterController::class, 'verificationStore'])->name('verification.send');
