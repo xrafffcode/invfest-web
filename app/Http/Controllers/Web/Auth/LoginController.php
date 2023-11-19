@@ -36,13 +36,12 @@ class LoginController extends Controller
     {
         $user = auth()->user();
 
-        switch ($user->hasRole('admin')) {
-            case true:
-                return redirect()->route('admin.dashboard');
-                break;
-            case false:
-                return redirect()->route('team.dashboard');
-                break;
+        if ($user->hasRole('admin')) {
+            return redirect()->route('admin.dashboard');
+        } else if ($user->hasRole('petugas')) {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return redirect()->route('team.dashboard');
         }
     }
 
