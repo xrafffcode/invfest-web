@@ -30,6 +30,12 @@
                         <span class="link-title">Manajemen Kompetisi</span>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/timeline*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.timeline.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="clock"></i>
+                        <span class="link-title">Timeline</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/sponsor*') ? ' active' : '' }}">
                     <a href="{{ route('admin.sponsor.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="dollar-sign"></i>

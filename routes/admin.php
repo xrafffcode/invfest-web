@@ -10,6 +10,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::put('/website-configuration/{id}', [\App\Http\Controllers\Web\Admin\WebConfigurationController::class, 'update'])->name('website-configuration.update');
 
     Route::resource('competition', \App\Http\Controllers\Web\Admin\CompetitionController::class);
+    Route::resource('timeline', \App\Http\Controllers\Web\Admin\TimelineController::class);
     Route::resource('payment-method', \App\Http\Controllers\Web\Admin\PaymentMethodController::class);
     Route::resource('sponsor', \App\Http\Controllers\Web\Admin\SponsorController::class);
     Route::resource('media-partner', \App\Http\Controllers\Web\Admin\MediaPartnerController::class);

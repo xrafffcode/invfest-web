@@ -9,6 +9,7 @@ use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RegisterTeamRepositoryInterface;
 use App\Interfaces\SponsorRepositoryInterface;
 use App\Interfaces\TeamRepositoryInterface;
+use App\Interfaces\TimelineRepositoryInterface;
 use App\Interfaces\WebConfigurationRepositoryInterface;
 use App\Interfaces\WorkRepositoryInterface;
 use App\Repositories\CompetitionRepository;
@@ -18,6 +19,7 @@ use App\Repositories\PaymentRepository;
 use App\Repositories\RegisterTeamRepository;
 use App\Repositories\SponsorRepository;
 use App\Repositories\TeamRepository;
+use App\Repositories\TimelineRepository;
 use App\Repositories\WebConfigurationRepository;
 use App\Repositories\WorkRepository;
 use Illuminate\Support\ServiceProvider;
@@ -33,6 +35,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(WebConfigurationRepositoryInterface::class, WebConfigurationRepository::class);
         $this->app->bind(CompetitionRepositoryInterface::class, CompetitionRepository::class);
+        $this->app->bind(TimelineRepositoryInterface::class, TimelineRepository::class);
         $this->app->bind(PaymentMethodRepositoryInterface::class, PaymentMethodRepository::class);
         $this->app->bind(RegisterTeamRepositoryInterface::class, RegisterTeamRepository::class);
         $this->app->bind(PaymentRepositoryInterface::class, PaymentRepository::class);

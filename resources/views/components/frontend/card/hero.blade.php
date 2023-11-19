@@ -5,16 +5,17 @@
         </h2>
         <div class="d-flex justify-content-between align-items-center">
             <div class="information">
-                <h2>
-                    {{ getWebConfiguration()->heading }}
-                </h2>
+                <h2 id="hero-heading">{{ getWebConfiguration()->heading }}</h2>
                 <div class="d-flex gap-3 mt-4">
-                    <a href="#detail" class="btn btn-outline-light btn-rounded">
-                        <i class="fas fa-arrow-down"></i>
-                        Detail Lomba
+                    <a href="#guidebook" class="btn btn-sm btn-rounded border border-1 border-primary text-white">
+                        Guidebook
                     </a>
-                    <a href="{{ route('register') }}" class="btn btn-outline-light btn-rounded">
-                        <i class="fas fa-user-plus"></i>
+                    <a href="#detail" class="btn btn-sm btn-rounded text-white" style="background-color: {{ getWebConfiguration()->secondary_color }}">
+                        <i class="fas fa-arrow-down"></i>
+                        Detail
+                    </a>
+                    <a href="#daftar" class="btn btn-sm btn-rounded border border-1 border-primary text-white">
+                        <i class="fas fa-plus"></i>
                         Daftar
                     </a>
                 </div>
