@@ -10,6 +10,7 @@ use App\Interfaces\PaymentMethodRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RegisterTeamRepositoryInterface;
 use App\Models\TeamMember;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert as Swal;
@@ -101,14 +102,23 @@ class RegisterController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function verificationVerify(Request $request)
+    public function verificationVerify($id, $hash)
     {
-        $request->user()->markEmailAsVerified();
+        $user = User::findOrFail($id);
+
+        if (!hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+            abort(404);
+        }
+
+        $user->markEmailAsVerified();
+
+        Auth::login($user);
 
         Swal::toast('Verifikasi email berhasil, silahkan isi data anggota tim', 'success');
 
         return redirect()->route('team-members');
     }
+
 
     /**
      * Show the payment page.
