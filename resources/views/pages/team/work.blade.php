@@ -18,7 +18,8 @@
             <div class="alert alert-info">
                 <i class="fas fa-info-circle"></i>
                 Deadline pengumpulan karya {{ $deadline->isoFormat('dddd, D MMMM Y HH:mm') }}. Sisa waktu
-                {{ $diff->h }} jam, {{ $diff->i }} menit, dan {{ $diff->s }} detik.
+                {{ $diff->d }} hari, {{ $diff->h }} jam, {{ $diff->i }} menit, dan {{ $diff->s }}
+                detik.
             </div>
             @if (Auth::user()->teams->first()->works)
                 <div class="alert alert-success">
