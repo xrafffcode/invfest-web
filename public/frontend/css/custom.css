@@ -28,14 +28,14 @@ body {
 .list_menu_link .nav-link {
     font-weight: 600;
     font-size: 11pt;
-    color: #222!important;
-    padding: 0!important;
+    color: #222 !important;
+    padding: 0 !important;
     margin: .5rem .85rem;
     text-transform: capitalize;
 }
 
 nav .list_menu_link .nav-link.active {
-    color: #222!important;
+    color: #222 !important;
     border-bottom: 2px solid var(--primary);
 }
 
@@ -294,12 +294,12 @@ header h4 {
     right: -55.8px;
 }
 
-/* media partner */
-#media-partner {
+#sponsor {
     background: var(--primary);
 }
 
-#media-partner .card-img {
+#media-partner .card-img,
+#sponsor .card-img {
     object-fit: contain;
     object-position: center;
     line-height: 50%;
@@ -308,9 +308,9 @@ header h4 {
     width: 100%;
 }
 
+
 /* footer */
 .footer {
-    margin-top: 10rem!important;
     padding: 60px 0px 60px;
 }
 
@@ -364,6 +364,7 @@ header h4 {
     #navbarTop {
         position: unset;
     }
+
     #content_timeline {
         padding-left: 2rem;
     }
@@ -441,7 +442,7 @@ header h4 {
     line-height: 1.75rem;
     letter-spacing: .025rem;
     font-size: 14pt;
-    font-weight: 300!important;
+    font-weight: 300 !important;
 }
 
 .card-competition {
@@ -554,4 +555,8 @@ header h4 {
 
 .nav-mobile a .fas {
     font-size: 1.5rem;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
 }

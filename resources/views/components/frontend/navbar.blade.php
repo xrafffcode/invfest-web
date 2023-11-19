@@ -1,5 +1,5 @@
 <nav class="navbar  navbar-expand-lg navbar-light shadow-sm " id="topNav">
-    <div class="container d-flex">
+    <div class="container">
 
         <a class="navbar-brand mx-auto mx-lg-0
             d-flex flex-row justify-content-center align-self-center"
@@ -16,26 +16,17 @@
         </a>
 
         <!-- Navbar Menu  -->
-        <div class="d-none d-lg-block" id="navbarNav" style="flex: 1;">
-            <ul class="navbar-nav mr-auto d-flex justify-content-between">
+        <div class="d-none d-lg-block" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
                 @guest
-                    <ul class="list_menu_link navbar-nav p-0 mx-auto">
-                        <li class="nav-item"><a href="" class="nav-link {{ request()->is('/') ? 'active' : '' }}">home</a></li>
-                        <li class="nav-item"><a href="" class="nav-link {{ request()->is('#timeline') ? 'active' : '' }}">upload karya</a></li>
-                        <li class="nav-item"><a href="#timeline" class="nav-link">timeline</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">contact us</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">tracking</a></li>
-                    </ul>
-                    <ul class="p-0">
-                        <a class="btn btn-sm btn-primary btn-rounded me-1" href="{{ route('login') }}">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Login
-                        </a>
-                        <a class="btn btn-sm btn-primary btn-rounded" href="{{ route('register') }}">
-                            <i class="fas fa-user-plus"></i>
-                            Register
-                        </a>                        
-                    </ul>
+                    <a class="btn btn-primary btn-rounded me-3" href="{{ route('login') }}">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </a>
+                    <a class="btn btn-primary btn-rounded" href="{{ route('register') }}">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
                 @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -73,7 +64,7 @@
                         </ul>
                     </li>
                 @endguest
-            </nav>
+            </ul>
         </div>
     </div>
 </nav>

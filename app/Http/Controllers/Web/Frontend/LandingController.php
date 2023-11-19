@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Interfaces\CompetitionRepositoryInterface;
 use App\Interfaces\TimelineRepositoryInterface;
 use App\Interfaces\MediaPartnerRepositoryInterface;
+use App\Interfaces\SponsorRepositoryInterface;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -13,14 +14,18 @@ class LandingController extends Controller
     private CompetitionRepositoryInterface $competitionRepository;
     private TimelineRepositoryInterface $timelineRepository;
     private MediaPartnerRepositoryInterface $partnerRepository;
+    private SponsorRepositoryInterface $sponsorRepository;
 
-    public function __construct(CompetitionRepositoryInterface $competitionRepository, 
-                                TimelineRepositoryInterface $timelineRepository,
-                                MediaPartnerRepositoryInterface $partnerRepository)
-    {
+    public function __construct(
+        CompetitionRepositoryInterface $competitionRepository,
+        TimelineRepositoryInterface $timelineRepository,
+        MediaPartnerRepositoryInterface $partnerRepository,
+        SponsorRepositoryInterface $sponsorRepository
+    ) {
         $this->competitionRepository    = $competitionRepository;
         $this->timelineRepository       = $timelineRepository;
         $this->partnerRepository        = $partnerRepository;
+        $this->sponsorRepository        = $sponsorRepository;
     }
 
     public function index()
@@ -28,7 +33,8 @@ class LandingController extends Controller
         $competitions   = $this->competitionRepository->getAllCompetitions();
         $timelines      = $this->timelineRepository->getAllTimeline();
         $partners       = $this->partnerRepository->getAllMediaPartners();
+        $sponsors       = $this->sponsorRepository->getAllSponsors();
 
-        return view('pages.landing', compact('competitions', 'timelines', 'partners'));
+        return view('pages.landing', compact('competitions', 'timelines', 'partners', 'sponsors'));
     }
 }

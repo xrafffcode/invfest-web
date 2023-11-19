@@ -2,13 +2,13 @@
     <div class="container">
         <div class="footer_menu row gap-5">
             <div class="footer_menu_list col-12 col-md-12 col-lg-4">
-                <img src="{{ asset(getWebConfiguration()->nav_logo) }}" alt="Logo" width="60px" height="80px" />
+                <img src="{{ asset(getWebConfiguration()->nav_logo) }}" alt="Logo" width="100" />
                 <p>{{ date('Y') }} @ IT TEAM INVFEST</p>
                 <b>Follow Us</b>
                 <ul class="fot_social">
                     <li class="">
                         <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </li>
                     <li class="">
@@ -32,34 +32,23 @@
                 <h6 class="fw-bold pb-2">Navigation</h6>
                 <ul class="navbar-nav">
                     <li>
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="{{ route('frontend.landing') }}" class="nav-link">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link">Tracking</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">Details</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">Contact Us</a>
+                        <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
+                            class="nav-link">Contact Us</a>
                     </li>
                 </ul>
             </div>
             <div class="footer_menu_list col-12 col-md-12 col-lg-3">
-                <h6 class="fw-bold pb-2">More</h6>
+                <h6 class="fw-bold pb-2">Competition</h6>
                 <ul class="navbar-nav">
-                    <li>
-                        <a href="#" class="nav-link">Documentation</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">Rulebook</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">Template</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link">Contact Us</a>
-                    </li>
+                    @foreach (\App\Models\Competition::all() as $competition)
+                        <li>
+                            <a href="{{ route('frontend.competition.show', $competition->slug) }}"
+                                class="nav-link">{{ $competition->name }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
