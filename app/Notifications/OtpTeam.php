@@ -15,9 +15,9 @@ class OtpTeam extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct(int $otp)
     {
-        //
+        $this->otp = $otp;
     }
 
     /**
@@ -37,7 +37,8 @@ class OtpTeam extends Notification
     {
         return (new MailMessage)
             ->subject('OTP Verifikasi Pendaftaran Tim')
-            ->line('Your OTP is ' . $this->otp)
+            ->line('Berikut adalah kode OTP untuk verifikasi pendaftaran tim.')
+            ->line('Kode OTP: ' . $this->otp)
             ->line('This OTP will expire in 5 minutes.')
             ->line('If you did not request an OTP, no further action is required.');
     }
