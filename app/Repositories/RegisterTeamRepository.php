@@ -25,7 +25,7 @@ class RegisterTeamRepository implements RegisterTeamRepositoryInterface
         $expiryTime = now()->addMinutes(5);
 
         $user->otp = $otp;
-        $user->otp_expiry_time = $expiryTime;
+        $user->otp_expiration = $expiryTime;
 
         $user->save();
 
