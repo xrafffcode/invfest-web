@@ -84,16 +84,16 @@
                             <tr>
                                 <th>Metode Pembayaran</th>
                                 <td>
-                                    {{ $team->payment->paymentMethod->name }} -
-                                    {{ $team->payment->paymentMethod->number }}
+                                    {{ $team->payment->paymentMethod->name ?? '' }} -
+                                    {{ $team->payment->paymentMethod->number ?? '' }}
                                 </td>
                             </tr>
                             <tr>
                                 <th>Bukti Pembayaran</th>
                                 <td>
-                                    <a href="{{ asset($team->payment->proof) }}" data-lightbox="image-1"
+                                    <a href="{{ asset($team->payment->proof ?? '') }}" data-lightbox="image-1"
                                         data-title="Bukti Pembayaran {{ $team->name }}">
-                                        <img src="{{ asset($team->payment->proof) }}" alt="Bukti Pembayaran"
+                                        <img src="{{ asset($team->payment->proof ?? '') }}" alt="Bukti Pembayaran"
                                             class="img-table-lightbox" width="100">
                                     </a>
                                 </td>
@@ -121,6 +121,8 @@
                                 @method('PUT')
                                 <input type="hidden" name="status" value="accepted">
                                 <input type="hidden" name="email" value="{{ $team->user->email }}">
+                                <input type="hidden" name="whatsapp_link"
+                                    value="{{ $team->competition->whatsapp_group_link }}">
                                 <button class="btn btn-success btn-sm"
                                     onclick="return confirm('Apakah anda yakin ingin menerima tim ini?')">Terima</button>
                             </form>

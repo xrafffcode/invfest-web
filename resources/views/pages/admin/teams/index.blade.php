@@ -39,9 +39,9 @@
                                 <td>{{ $team->institution }}</td>
                                 <td>{{ $team->leader_name }}</td>
                                 <td>
-                                    <a href="{{ asset($team->payment->proof) }}" data-lightbox="image-1"
+                                    <a href="{{ asset($team->payment->proof ?? '') }}" data-lightbox="image-1"
                                         data-title="Bukti Pembayaran {{ $team->name }}">
-                                        <img src="{{ asset($team->payment->proof) }}" alt="Bukti Pembayaran"
+                                        <img src="{{ asset($team->payment->proof ?? '') }}" alt="Bukti Pembayaran"
                                             class="img-table-lightbox" width="100">
                                     </a>
                                 </td>

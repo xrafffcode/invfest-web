@@ -74,7 +74,7 @@ class TeamController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if ($request->status == 'accepted') {
-            $user->notify(new AprrovedTeam());
+            $user->notify(new AprrovedTeam($request->whatsapp_link));
         } else {
             $user->notify(new RejectedTeam());
         }

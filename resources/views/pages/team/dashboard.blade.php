@@ -4,13 +4,23 @@
     @endpush
 
     @if (Auth::user()->teams->first()->status == 'pending')
-        <div class="alert alert-warning">
-            <i class="fas fa-exclamation-triangle"></i>
-            Tim anda sedang dalam proses verifikasi oleh admin. Silahkan menunggu.
-            <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
-                target="_blank" class="alert-link">Hubungi
-                Admin</a>
-        </div>
+        @if (Auth::user()->teams->first()->payment != null)
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Tim anda sedang dalam proses verifikasi oleh admin. Silahkan menunggu.
+                <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
+                    target="_blank" class="alert-link">Hubungi
+                    Admin</a>
+            </div>
+        @else
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Anda belum melakukan pembayaran. Silahkan melakukan pembayaran terlebih dahulu.
+                <a href="{{ route('payment-team') }}" target="_blank" class="alert-link">
+                    Bayar Sekarang
+                </a>
+            </div>
+        @endif
     @else
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <i class="fas fa-check-circle"></i>

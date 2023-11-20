@@ -10,7 +10,7 @@
                     {{ getWebConfiguration()->title }}
                 </span>
                 <small class="text-slogan">
-                    Easy life with technology
+                    {{ getWebConfiguration()->slogan }}
                 </small>
             </div>
         </a>

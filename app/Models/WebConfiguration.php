@@ -18,6 +18,7 @@ class WebConfiguration extends Model
     protected $fillable = [
         'favicon',
         'title',
+        'slogan',
         'heading',
         'description',
         'nav_logo',
@@ -34,6 +35,7 @@ class WebConfiguration extends Model
         'twibbon',
         'twibbon_link',
         'mascot',
+        'instagram',
     ];
 
     /**

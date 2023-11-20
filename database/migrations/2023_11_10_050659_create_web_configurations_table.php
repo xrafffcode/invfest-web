@@ -15,13 +15,14 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('favicon')->default('assets/web-configurations/placeholder.png');
             $table->string('title');
+            $table->string('slogan');
             $table->string('heading');
             $table->longText('description');
             $table->string('nav_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_description');
             $table->string('footer_copyrigth');
-            $table->date('deadline');
+            $table->datetimes('deadline');
             $table->string('email');
             $table->string('phone');
             $table->string('primary_color');

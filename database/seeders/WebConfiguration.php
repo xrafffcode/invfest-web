@@ -15,6 +15,7 @@ class WebConfiguration extends Seeder
     {
         ModelsWebConfiguration::create([
             'title' => 'InvFest',
+            'slogan' => 'InvFest',
             'heading' => 'InvFest',
             'description' => 'InvFest',
             'footer_description' => 'InvFest',
@@ -27,6 +28,7 @@ class WebConfiguration extends Seeder
             'secondary_color' => '#007BFF',
             'secondary_color_hover' => '#0168D7',
             'twibbon_link' => 'https://invfest.my.id',
+            'instagram' => 'https://instagram.com/invfest',
         ]);
     }
 }

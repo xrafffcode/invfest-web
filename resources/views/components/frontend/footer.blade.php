@@ -7,23 +7,8 @@
                 <b>Follow Us</b>
                 <ul class="fot_social">
                     <li class="">
-                        <a href="#" class="social-icon">
+                        <a href="{{ getWebConfiguration()->instagram }}" class="social-icon">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google-plus-g"></i>
                         </a>
                     </li>
                 </ul>
@@ -35,7 +20,7 @@
                         <a href="{{ route('frontend.landing') }}" class="nav-link">Home</a>
                     </li>
                     <li>
-                        <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
+                        <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, admin invfest.') }}"
                             class="nav-link">Contact Us</a>
                     </li>
                 </ul>

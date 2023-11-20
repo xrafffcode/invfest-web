@@ -38,6 +38,8 @@
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <h5 class="mb-3">Konfigurasi Umum</h5>
                             <x-input.text name="title" label="Title Website" value="{{ $webConfiguration->title }}" />
+                            <x-input.text name="slogan" label="Slogan Website"
+                                value="{{ $webConfiguration->slogan }}" />
                             <x-input.text name="heading" label="Heading Website"
                                 value="{{ $webConfiguration->heading }}" />
                             <x-input.textarea name="description" label="Deskripsi Website"
@@ -46,8 +48,9 @@
                                 class="img-fluid mb-3" id="nav_logo_image" width="100">
                             <x-input.file name="nav_logo" label="Logo Navigasi"
                                 value="{{ $webConfiguration->nav_logo }}" id="nav_logo" />
-                            <img src="{{ asset($webConfiguration->footer_logo) }}" alt="{{ $webConfiguration->title }}"
-                                class="img-fluid mb-3" id="footer_logo_image" width="100">
+                            <img src="{{ asset($webConfiguration->footer_logo) }}"
+                                alt="{{ $webConfiguration->title }}" class="img-fluid mb-3" id="footer_logo_image"
+                                width="100">
                             <x-input.file name="footer_logo" label="Logo Footer"
                                 value="{{ $webConfiguration->footer_logo }}" id="footer_logo" />
                             <x-input.text name="footer_description" label="Deskripsi Footer"
@@ -58,6 +61,8 @@
                             <x-input.text name="phone" label="Nomor Telepon"
                                 value="{{ $webConfiguration->phone }}" />
                             <x-input.text name="email" label="Email" value="{{ $webConfiguration->email }}" />
+                            <x-input.text name="instagram" label="Instagram"
+                                value="{{ $webConfiguration->instagram }}" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <h5 class="mb-3">Konfigurasi Event</h5>

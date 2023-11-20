@@ -10,14 +10,14 @@ use Illuminate\Notifications\Notification;
 class AprrovedTeam extends Notification
 {
     use Queueable;
-
+    public $whatsapp_link;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct(string $whatsapp_link)
     {
-        //
+        $this->whatsapp_link = $whatsapp_link;
     }
 
     /**
@@ -37,8 +37,9 @@ class AprrovedTeam extends Notification
     {
         return (new MailMessage)
             ->line('Tim anda telah disetujui.')
-            ->action('Dashboard', url('/team/dashboard'))
-            ->line('Terima kasih telah mendaftar :)');
+            ->line('Silahkan bergabung dengan grup whatsapp berikut untuk mendapatkan informasi lebih lanjut.')
+            ->action('Join Whatsapp Group', $this->whatsapp_link)
+            ->line('Terima kasih telah mendaftar di ' . config('app.name') . '.');
     }
 
     /**
