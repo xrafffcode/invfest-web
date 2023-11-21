@@ -31,7 +31,8 @@ class LandingController extends Controller
     public function index()
     {
         $competitions   = $this->competitionRepository->getAllCompetitions();
-        $timelines      = $this->timelineRepository->getAllTimeline()->sortBy('date')->sortBy('month');
+        // sort by colomn date in table timelines (ascending)
+        $timelines      = $this->timelineRepository->getAllTimeline()->orderBy('date', 'asc')->get();
         $partners       = $this->partnerRepository->getAllMediaPartners();
         $sponsors       = $this->sponsorRepository->getAllSponsors();
 
