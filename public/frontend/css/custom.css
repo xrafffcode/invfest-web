@@ -473,8 +473,14 @@ header h4 {
 }
 
 .btn-secondary:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+    background-color: var(--secondaryHover) !important;
+    border-color: var(--secondaryHover) !important;
+}
+
+.btn.border-white:hover {
+    background-color: white !important;
+    border-color: white !important;
+    color: var(--primary) !important;
 }
 
 .twibbon-image {

@@ -7,9 +7,14 @@
             <div class="information align-self-start p-4">
                 <p class="info-desc">{!! getWebConfiguration()->description !!}</p>
                 <br>
-                <a href="{{ route('register') }}" class="btn btn-secondary btn-secondary mt-3 fw-bold px-5">
+                <a href="{{ route('register') }}" class="btn btn-secondary btn-secondary mt-3  px-5">
                     Daftar
                 </a>
+                <button type="button" class="btn border border-1 border-white text-white mt-3  px-5"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fas fa-video"></i>
+                    Tutorial Pendaftaran
+                </button>
             </div>
             <img src="{{ asset(getWebConfiguration()->mascot) }}" alt="mascot" class="mascot-image">
         </div>
@@ -29,11 +34,23 @@
                         class="btn btn-sm btn-rounded border border-1 border-primary text-white">
                         Unduh Twibbon
                     </a>
-                    <a href="{{ asset(getWebConfiguration()->twibbon_link) }}"
-                        class="btn btn-sm btn-rounded border border-1 border-primary text-white">
-                        Video Tutorial
-                    </a>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close float-end mb-3" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <iframe width="100%" height="500px"
+                    src="https://www.youtube.com/embed/o1Va6qr3HHc?si=C2Xqh5U55O_5vTEa" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>

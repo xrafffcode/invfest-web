@@ -7,13 +7,12 @@
             <div class="information">
                 <h2 id="hero-heading">{{ getWebConfiguration()->heading }}</h2>
                 <div class="d-flex gap-3 mt-4">
-                    <a href="#detail" class="btn btn-sm btn-rounded text-white"
-                        style="background-color: {{ getWebConfiguration()->secondary_color }}">
+                    <a href="#detail" class="btn btn-sm btn-rounded text-white btn-secondary">
                         <i class="fas fa-arrow-down"></i>
                         Detail
                     </a>
                     <a href="{{ route('register') }}"
-                        class="btn btn-sm btn-rounded border border-1 border-primary text-white">
+                        class="btn btn-sm btn-rounded border border-1 border-white text-white">
                         <i class="fas fa-user-plus"></i>
                         Daftar
                     </a>
