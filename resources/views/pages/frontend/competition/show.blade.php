@@ -8,7 +8,7 @@
             <a href="{{ route('register') }}" class="btn btn-primary mt-3 w-100">
                 Daftar Kompetisi
             </a>
-            <a href="{{ asset($competition->guidebook) }}" class="btn btn-secondary mt-3 w-100">
+            <a href="{{ asset($competition->guidebook) }}" class="btn btn-secondary mt-3 w-100" target="_blank">
                 Guidebook
             </a>
             <hr>

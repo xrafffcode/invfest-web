@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Admin;
 use App\Http\Controllers\Controller;
 use App\Interfaces\WorkRepositoryInterface;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert as Swal;
 
 class WorkController extends Controller
 {
@@ -63,7 +64,11 @@ class WorkController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->workRepository->reviewedWork($id);
+
+        Swal::success('Berhasil', 'Karya berhasil diverifikasi');
+
+        return redirect()->route('admin.work.index');
     }
 
     /**

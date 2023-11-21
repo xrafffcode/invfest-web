@@ -8,7 +8,7 @@
             <div class="alert alert-warning">
                 <i class="fas fa-exclamation-triangle"></i>
                 Tim anda sedang dalam proses verifikasi oleh admin. Silahkan menunggu.
-                <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, saya ingin menanyakan status verifikasi tim saya.') }}"
+                <a href="{{ 'https://api.whatsapp.com/send/?phone=' . getWebConfiguration()->phone . '&text=' . urlencode('Halo, perkenalkan saya ' . Auth::user()->teams->first()->leader_name . ' dari tim ' . Auth::user()->teams->first()->team_name . ' ingin menanyakan status verifikasi tim saya.') }}"
                     target="_blank" class="alert-link">Hubungi
                     Admin</a>
             </div>
@@ -78,10 +78,10 @@
                             <ul>
                                 @foreach (Auth::user()->teams->first()->members as $member)
                                     <li>
-                                        {{ $member->name }} <a href="{{ asset($member->card) }}"
-                                            data-lightbox="image-1" data-title="Kartu Identitas {{ $member->name }}">
+                                        {{ $member->name ?? 'Tidak Ada' }} <a href="{{ asset($member->card) }}"
+                                            data-lightbox="image-1"
+                                            data-title="Kartu Identitas {{ $member->name ?? 'Tidak Ada' }}">
                                             Kartu Pelajar / Mahasiswa
-
                                         </a>
                                     </li>
                                 @endforeach

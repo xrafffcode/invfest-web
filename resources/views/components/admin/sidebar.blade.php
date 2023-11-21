@@ -24,6 +24,12 @@
                 </a>
             </li>
             @hasrole('admin')
+                <li class="nav-item {{ request()->is('admin/work*') ? ' active' : '' }}">
+                    <a href="{{ route('admin.work.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="code"></i>
+                        <span class="link-title">Karya Peserta</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/competition*') ? ' active' : '' }}">
                     <a href="{{ route('admin.competition.index') }}" class="nav-link">
                         <i class="link-icon" data-feather="award"></i>

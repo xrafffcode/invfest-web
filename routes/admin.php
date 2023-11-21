@@ -19,5 +19,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('payment-method', \App\Http\Controllers\Web\Admin\PaymentMethodController::class);
         Route::resource('sponsor', \App\Http\Controllers\Web\Admin\SponsorController::class);
         Route::resource('media-partner', \App\Http\Controllers\Web\Admin\MediaPartnerController::class);
+        Route::resource('work', \App\Http\Controllers\Web\Admin\WorkController::class);
     });
 });

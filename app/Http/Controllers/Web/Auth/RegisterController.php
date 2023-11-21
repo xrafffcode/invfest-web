@@ -190,8 +190,8 @@ class RegisterController extends Controller
 
             TeamMember::create([
                 'team_id' => $data['team_id'],
-                'name' => $data[$propertyName],
-                'card' => $data[$propertyCard],
+                'name' => $data[$propertyName] ?? null,
+                'card' => $data[$propertyCard] ?? null,
             ]);
         }
 

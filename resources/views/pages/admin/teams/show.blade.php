@@ -55,11 +55,10 @@
                                     <ul>
                                         @foreach ($team->members as $member)
                                             <li>
-                                                {{ $member->name }} <a href="{{ asset($member->card) }}"
-                                                    data-lightbox="image-1"
+                                                {{ $member->name ?? 'Tidak Ada' }} <a
+                                                    href="{{ asset($member->card) }}" data-lightbox="image-1"
                                                     data-title="Kartu Identitas {{ $member->name }}">
                                                     Kartu Pelajar / Mahasiswa
-
                                                 </a>
                                             </li>
                                         @endforeach

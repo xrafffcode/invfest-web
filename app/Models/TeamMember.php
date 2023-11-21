@@ -52,6 +52,10 @@ class TeamMember extends Model
      */
     public function setCardAttribute($value)
     {
-        $this->attributes['card'] = $value->storeAs('assets/teams/', $this->team->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+        if ($value) {
+            $this->attributes['card'] = $value->storeAs('assets/teams/', $this->team->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+        }
+
+        $this->attributes['card'] = null;
     }
 }
