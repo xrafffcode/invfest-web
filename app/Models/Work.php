@@ -18,7 +18,7 @@ class Work extends Model
     protected $fillable = [
         'team_id',
         'title',
-        'url',
+        'zip_file',
         'is_reviewed',
     ];
 
@@ -30,6 +30,7 @@ class Work extends Model
     protected $casts = [
         'id' => 'string',
         'team_id' => 'string',
+        'is_reviewed' => 'boolean',
     ];
 
     /**
@@ -38,5 +39,15 @@ class Work extends Model
     public function team()
     {
         return $this->belongsTo(Team::class);
+    }
+
+    public function setZipFileAttribute($value)
+    {
+        $this->attributes['zip_file'] = $value->storeAs('assets/works/', $this->team->team_name . "/" . $this->title . '.' . $value->extension(), 'public');
+    }
+
+    public function getZipFileAttribute($value)
+    {
+        return asset('storage/' . $value);
     }
 }

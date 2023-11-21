@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('team_id');
             $table->string('title');
-            $table->string('url');
+            $table->string('zip_file');
             $table->boolean('is_reviewed')->default(false);
             $table->timestamps();
         });

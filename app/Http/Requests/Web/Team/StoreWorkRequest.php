@@ -16,7 +16,7 @@ class StoreWorkRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'url' => 'required|url',
+            'zip_file' => 'required|file|mimes:zip,rar',
         ];
     }
 
@@ -30,8 +30,8 @@ class StoreWorkRequest extends FormRequest
         return [
             'title.required' => 'Judul karya tidak boleh kosong.',
             'title.string' => 'Judul karya harus berupa string.',
-            'url.required' => 'URL karya tidak boleh kosong.',
-            'url.url' => 'URL karya harus berupa URL yang valid.',
+            'zip_file.required' => 'File karya tidak boleh kosong.',
+            'zip_file.file' => 'File karya harus berupa file.',
         ];
     }
 

@@ -27,15 +27,17 @@
                     Karya anda telah dikirimkan, semoga sukses!
                 </div>
                 <x-input.text label="Judul Karya" value="{{ Auth::user()->teams->first()->works->title }}" readonly />
-                <x-input.text label="Link Karya" value="{{ Auth::user()->teams->first()->works->url }}" readonly />
+                <a href="{{ Auth::user()->teams->first()->works->zip_file }}" target="_blank"
+                    class="btn btn-primary btn-sm">
+                    Unduh Karya
+                </a>
             @else
                 <form action="{{ route('team.work.store') }}" method="POST" enctype="multipart/form-data"
                     id="form-work">
                     @csrf
                     <x-input.text label="Judul Karya" name="title"
                         value="{{ Auth::user()->teams->first()->works->title ?? '' }}" />
-                    <x-input.text label="Link Karya" name="url"
-                        value="{{ Auth::user()->teams->first()->works->url ?? '' }}" />
+                    <x-input.text label="Zip Karya" name="zip_file" type="file" />
                     <x-button.primary class="float-end" type="submit">
                         Kirim Karya
                     </x-button.primary>
@@ -52,7 +54,10 @@
                     Karya anda telah dikirimkan, semoga sukses!
                 </div>
                 <x-input.text label="Judul Karya" value="{{ Auth::user()->teams->first()->works->title }}" readonly />
-                <x-input.text label="Link Karya" value="{{ Auth::user()->teams->first()->works->url }}" readonly />
+                <a href="{{ Auth::user()->teams->first()->works->zip_file }}" target="_blank"
+                    class="btn btn-primary btn-sm">
+                    Unduh Karya
+                </a>
             @else
             @endif
         @endif
