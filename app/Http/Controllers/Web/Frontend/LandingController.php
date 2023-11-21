@@ -32,7 +32,7 @@ class LandingController extends Controller
     {
         $competitions   = $this->competitionRepository->getAllCompetitions();
         // sort by colomn date in table timelines (ascending)
-        $timelines      = $this->timelineRepository->getAllTimeline()->scopeOrderByDate()->get();
+        $timelines      = $this->timelineRepository->getAllTimeline();
         $partners       = $this->partnerRepository->getAllMediaPartners();
         $sponsors       = $this->sponsorRepository->getAllSponsors();
 

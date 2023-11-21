@@ -9,7 +9,7 @@ class TimelineRepository implements TimelineRepositoryInterface
 {
     public function getAllTimeline()
     {
-        return Timeline::all();
+        return Timeline::orderByDate()->get();
     }
 
     public function getTimelineById($id)
