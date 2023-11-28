@@ -55,7 +55,5 @@ class TeamMember extends Model
         if ($value) {
             $this->attributes['card'] = $value->store('assets/teams/members', 'public');
         }
-
-        $this->attributes['card'] = null;
     }
 }

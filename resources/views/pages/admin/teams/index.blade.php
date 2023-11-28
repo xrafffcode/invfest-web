@@ -1,9 +1,4 @@
 <x-layouts.admin title="Tim Peserta">
-    @push('plugin-styles')
-        <link rel="stylesheet" href="{{ asset('admin/assets/plugins/lightbox/css/lightbox.css') }}">
-    @endpush
-
-
     <div class="d-flex align-items-center justify-content-between">
         <nav class="page-breadcrumb mb-0">
             <ol class="breadcrumb">
@@ -39,11 +34,12 @@
                                 <td>{{ $team->institution }}</td>
                                 <td>{{ $team->leader_name }}</td>
                                 <td>
-                                    <a href="{{ asset($team->payment->proof ?? '') }}" data-lightbox="image-1"
-                                        data-title="Bukti Pembayaran {{ $team->name }}">
-                                        <img src="{{ asset($team->payment->proof ?? '') }}" alt="Bukti Pembayaran"
+                                    @if ($team->payment->proof)
+                                        <img src="{{ asset($team->payment->proof) }}" alt="Bukti Pembayaran"
                                             class="img-table-lightbox" width="100">
-                                    </a>
+                                    @else
+                                        <span>Belum Bayar</span>
+                                    @endif
                                 </td>
                                 <td>
                                     @if ($team->status == 'pending')
@@ -74,13 +70,5 @@
     </div>
 
     @push('plugin-scripts')
-        <script src="{{ asset('admin/assets/plugins/lightbox/js/lightbox-plus-jquery.min.js') }}"></script>
-
-        <script>
-            lightbox.option({
-                'resizeDuration': 200,
-                'wrapAround': true
-            })
-        </script>
     @endpush
 </x-layouts.admin>
