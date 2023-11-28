@@ -93,7 +93,7 @@ class Team extends Model
      */
     public function setLeaderCardAttribute($value)
     {
-        $this->attributes['leader_card'] = $value->storeAs('assets/teams/', $this->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+        $this->attributes['leader_card'] = $value->store('assets/teams/leaders', 'public');
     }
 
     /**
@@ -111,7 +111,7 @@ class Team extends Model
     {
         if ($value) {
             $this->attributes['companion_card'] =
-                $value->storeAs('assets/teams/', $this->team_name . "/" . $this->name . '.' . $value->extension(), 'public');
+                $value->store('assets/teams/companions', 'public');
         }
 
         $this->attributes['companion_card'] = null;
