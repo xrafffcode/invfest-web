@@ -34,12 +34,13 @@
                                 <td>{{ $team->institution }}</td>
                                 <td>{{ $team->leader_name }}</td>
                                 <td>
-                                    @if ($team->payment->proof)
+                                    @if ($team->payment != null && $team->payment->proof != null)
                                         <img src="{{ asset($team->payment->proof) }}" alt="Bukti Pembayaran"
                                             class="img-table-lightbox" width="100">
                                     @else
                                         <span>Belum Bayar</span>
                                     @endif
+
                                 </td>
                                 <td>
                                     @if ($team->status == 'pending')

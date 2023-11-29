@@ -4,7 +4,6 @@
             {{ sprintf('%s Timelines', getWebConfiguration()->title) }}</h2>
         <div id="content_timeline">
             <ul class="timeline mx-auto">
-
                 @foreach ($timelines as $timeline)
                     <li class="card event" data-date="{{ date('d-m-Y', strtotime($timeline->date)) }}">
                         <div class="wrap_info">
