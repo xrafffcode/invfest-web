@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('zip_file');
             $table->boolean('is_reviewed')->default(false);
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }

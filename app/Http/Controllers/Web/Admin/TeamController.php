@@ -89,6 +89,10 @@ class TeamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->teamRepository->deleteTeam($id);
+
+        Swal::toast('Tim berhasil dihapus', 'success');
+
+        return redirect()->route('admin.team.index');
     }
 }
