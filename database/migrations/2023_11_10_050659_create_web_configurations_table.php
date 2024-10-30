@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string('footer_logo')->default('assets/web-configurations/placeholder.png');
             $table->string('footer_description');
             $table->string('footer_copyrigth');
-            $table->datetimes('deadline');
+            $table->dateTime('deadline');
             $table->string('email');
+            $table->string('instagram');
             $table->string('phone');
             $table->string('primary_color');
             $table->string('primary_color_hover');
